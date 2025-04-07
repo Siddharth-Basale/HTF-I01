@@ -147,6 +147,12 @@ def supplier_dashboard(request):
         })
     except Supplier.DoesNotExist:
         return redirect('supplier_login')
+    
+from .forms import InventoryItemForm
+from .models import SupplierInventory 
+
+    
+
 
 
 # supplier/views.py
@@ -556,3 +562,43 @@ def calculate_route(request):
             'success': False,
             'error': str(e)
         }, status=400)
+    
+# supplier/views.py
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Supplier, SupplierInventory
+from .forms import InventoryItemForm
+
+@login_required
+def inventory_management(request):
+    supplier = get_object_or_404(Supplier, user=request.user)
+    
+    if request.method == 'POST':
+        form = InventoryItemForm(request.POST)  # Use the form, not the model directly
+        if form.is_valid():
+            inventory_item = form.save(commit=False)
+            inventory_item.supplier = supplier
+            inventory_item.save()
+            messages.success(request, 'Inventory item added successfully!')
+            return redirect('supplier_inventory')
+    else:
+        form = InventoryItemForm()
+    
+    inventory_items = supplier.inventory_items.all()
+    return render(request, 'supplier/inventory_management.html', {
+        'supplier': supplier,
+        'form': form,
+        'inventory_items': inventory_items
+    })
+
+@login_required
+def delete_inventory_item(request, item_id):
+    supplier = get_object_or_404(Supplier, user=request.user)
+    item = get_object_or_404(SupplierInventory, id=item_id, supplier=supplier)
+    
+    if request.method == 'POST':
+        item.delete()
+        messages.success(request, 'Inventory item deleted successfully!')
+    
+    return redirect('supplier_inventory')
