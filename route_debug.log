@@ -2822,6 +2822,7 @@ Traceback (most recent call last):
   File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
     raise self.model.DoesNotExist(
 manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+<<<<<<< HEAD
 2025-04-07 23:03:53,639 - WARNING - Not Found: /favicon.ico
 2025-04-07 23:04:15,755 - ERROR - Internal Server Error: /supplier/inventory/
 Traceback (most recent call last):
@@ -3474,3 +3475,497 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'edit_inventory_item' not fou
 2025-04-08 00:27:39,946 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\Hack3\Hack-1\I01\supplier\models.py changed, reloading.
 2025-04-08 00:28:04,064 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\Hack3\Hack-1\I01\supplier\models.py changed, reloading.
 2025-04-08 00:28:15,601 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\Hack3\Hack-1\I01\supplier\models.py changed, reloading.
+=======
+2025-04-07 22:45:42,779 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:02:40,557 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:02:40,558 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:02:40,558 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:02:40,559 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:02:41,109 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 440
+2025-04-07 23:02:41,110 - DEBUG - RateLimiter sleep(0.44805690000066534)
+2025-04-07 23:02:41,559 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:02:42,180 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 23:02:42,182 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:02:42,848 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 23:03:25,119 - WARNING - Forbidden (CSRF token from POST incorrect.): /manufacturer/login/
+2025-04-07 23:25:20,490 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:26:35,568 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:27:30,743 - DEBUG - Starting new HTTPS connection (1): api.tavily.com:443
+2025-04-07 23:27:36,344 - DEBUG - https://api.tavily.com:443 "POST /search HTTP/1.1" 200 3692
+2025-04-07 23:27:38,687 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-07 23:27:38,688 - DEBUG - load_verify_locations cafile='C:\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-07 23:27:38,929 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-07 23:27:39,296 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002C1EACB1C40>
+2025-04-07 23:27:39,296 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002C1EA880FD0> server_hostname='api.phidata.com' timeout=60
+2025-04-07 23:27:39,849 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002C1EACB1BB0>
+2025-04-07 23:27:39,850 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-07 23:27:39,852 - DEBUG - send_request_headers.complete
+2025-04-07 23:27:39,852 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-07 23:27:39,852 - DEBUG - send_request_body.complete
+2025-04-07 23:27:39,852 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-07 23:27:40,154 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Apr 2025 17:57:39 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-07 23:27:40,155 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-07 23:27:40,155 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-07 23:27:40,155 - DEBUG - receive_response_body.complete
+2025-04-07 23:27:40,155 - DEBUG - response_closed.started
+2025-04-07 23:27:40,156 - DEBUG - response_closed.complete
+2025-04-07 23:27:40,156 - DEBUG - close.started
+2025-04-07 23:27:40,157 - DEBUG - close.complete
+2025-04-07 23:30:20,491 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:30:58,273 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:30:58,274 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:30:58,274 - INFO - Geocoder initialized successfully
+2025-04-07 23:30:58,274 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:30:58,275 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:30:59,392 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 440
+2025-04-07 23:30:59,392 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:31:00,447 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 436
+2025-04-07 23:31:00,449 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:31:01,184 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/1.1" 200 None
+2025-04-07 23:31:28,193 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:31:28,193 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:31:28,193 - INFO - Geocoder initialized successfully
+2025-04-07 23:31:28,194 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:31:28,194 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:31:28,777 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 440
+2025-04-07 23:31:28,779 - DEBUG - RateLimiter sleep(0.4146106000007421)
+2025-04-07 23:31:29,195 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:31:29,854 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 436
+2025-04-07 23:31:29,856 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:31:30,555 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/1.1" 200 None
+2025-04-07 23:31:53,236 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:31:53,236 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:31:53,237 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:31:53,237 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:31:53,935 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 440
+2025-04-07 23:31:53,935 - DEBUG - RateLimiter sleep(0.30092750000039814)
+2025-04-07 23:31:54,237 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:31:54,952 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 436
+2025-04-07 23:31:54,954 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:31:55,646 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/1.1" 200 None
+2025-04-07 23:32:56,492 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:37:13,566 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:37:13,566 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:37:13,567 - INFO - Geocoder initialized successfully
+2025-04-07 23:37:13,567 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:37:13,568 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:37:14,398 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 440
+2025-04-07 23:37:14,398 - DEBUG - RateLimiter sleep(0.1686145999992732)
+2025-04-07 23:37:14,568 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:37:15,514 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/1.1" 200 436
+2025-04-07 23:37:15,515 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:37:16,166 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/1.1" 200 None
+2025-04-08 00:17:04,310 - WARNING - Not Found: /favicon.ico
+2025-04-08 00:25:10,576 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:31:47,171 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\views.py changed, reloading.
+2025-04-08 00:39:30,593 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:39:54,391 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:42:48,901 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:43:23,683 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:43:41,604 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\views.py changed, reloading.
+2025-04-08 00:43:55,379 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\urls.py changed, reloading.
+2025-04-08 00:44:44,891 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 00:44:44,892 - DEBUG - load_verify_locations cafile='C:\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 00:44:45,162 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 00:44:45,498 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002030AA64950>
+2025-04-08 00:44:45,498 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002030AAA47D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 00:44:46,051 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002030AA65910>
+2025-04-08 00:44:46,051 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 00:44:46,052 - DEBUG - send_request_headers.complete
+2025-04-08 00:44:46,052 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 00:44:46,053 - DEBUG - send_request_body.complete
+2025-04-08 00:44:46,053 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 00:44:46,350 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Apr 2025 19:14:45 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 00:44:46,351 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 00:44:46,352 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 00:44:46,352 - DEBUG - receive_response_body.complete
+2025-04-08 00:44:46,352 - DEBUG - response_closed.started
+2025-04-08 00:44:46,352 - DEBUG - response_closed.complete
+2025-04-08 00:44:46,352 - DEBUG - close.started
+2025-04-08 00:44:46,353 - DEBUG - close.complete
+2025-04-08 00:45:24,172 - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-08 00:45:24,173 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:45:24,173 - DEBUG - Entering get()
+2025-04-08 00:45:24,173 - DEBUG -  Entering _make_request()
+2025-04-08 00:45:24,173 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:45:24,174 - DEBUG - params={'modules': 'recommendationTrend', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'HRC=F'}
+2025-04-08 00:45:24,174 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:45:24,174 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:45:24,174 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:45:24,178 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-08 00:45:24,179 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-08 00:45:24,179 - DEBUG - loaded persistent cookie
+2025-04-08 00:45:24,179 - DEBUG - reusing cookie
+2025-04-08 00:45:24,182 - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-08 00:45:24,509 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-08 00:45:24,510 - DEBUG - crumb = '.pJlET1ylV2'
+2025-04-08 00:45:24,510 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:45:24,511 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:45:24,513 - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-08 00:45:24,673 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2 HTTP/1.1" 404 122
+2025-04-08 00:45:24,673 - DEBUG - response code=404
+2025-04-08 00:45:24,673 - DEBUG - toggling cookie strategy basic -> csrf
+2025-04-08 00:45:24,673 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:45:24,674 - DEBUG - cookie_mode = 'csrf'
+2025-04-08 00:45:24,674 - DEBUG -    Entering _get_crumb_csrf()
+2025-04-08 00:45:24,675 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['csrf', 1, 0])
+2025-04-08 00:45:24,676 - DEBUG - Starting new HTTPS connection (1): guce.yahoo.com:443
+2025-04-08 00:45:25,076 - DEBUG - https://guce.yahoo.com:443 "GET /consent HTTP/1.1" 302 0
+2025-04-08 00:45:25,078 - DEBUG - Starting new HTTPS connection (1): www.yahoo.com:443
+2025-04-08 00:45:26,031 - DEBUG - https://www.yahoo.com:443 "GET /?guccounter=1 HTTP/1.1" 200 None
+2025-04-08 00:45:26,273 - DEBUG - Failed to find "csrfToken" in response
+2025-04-08 00:45:26,274 - DEBUG -    Exiting _get_crumb_csrf()
+2025-04-08 00:45:26,274 - DEBUG - toggling cookie strategy csrf -> basic
+2025-04-08 00:45:26,274 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:45:26,274 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-08 00:45:26,274 - DEBUG - loaded persistent cookie
+2025-04-08 00:45:26,276 - DEBUG - reusing cookie
+2025-04-08 00:45:26,382 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-08 00:45:26,383 - DEBUG - crumb = '.pJlET1ylV2'
+2025-04-08 00:45:26,383 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:45:26,383 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:45:26,760 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2 HTTP/1.1" 404 122
+2025-04-08 00:45:26,761 - DEBUG - response code=404
+2025-04-08 00:45:26,761 - DEBUG -  Exiting _make_request()
+2025-04-08 00:45:26,761 - DEBUG - Exiting get()
+2025-04-08 00:45:26,761 - ERROR - 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2
+2025-04-08 00:45:26,764 - DEBUG - Entering post()
+2025-04-08 00:45:26,764 - DEBUG -  Entering _make_request()
+2025-04-08 00:45:26,764 - DEBUG - url=https://finance.yahoo.com/xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin
+2025-04-08 00:45:26,764 - DEBUG - params=None
+2025-04-08 00:45:26,764 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:45:26,764 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:45:26,766 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:45:26,766 - DEBUG - reusing cookie
+2025-04-08 00:45:26,766 - DEBUG - reusing crumb
+2025-04-08 00:45:26,766 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:45:26,766 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:45:26,767 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2025-04-08 00:45:27,052 - DEBUG - https://finance.yahoo.com:443 "POST /xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin&crumb=.pJlET1ylV2 HTTP/1.1" 200 135
+2025-04-08 00:45:27,053 - DEBUG - response code=200
+2025-04-08 00:45:27,053 - DEBUG -  Exiting _make_request()
+2025-04-08 00:45:27,053 - DEBUG - Exiting post()
+2025-04-08 00:45:27,055 - DEBUG - Entering history()
+2025-04-08 00:45:27,057 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-08 00:45:27,058 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:45:27,231 - DEBUG -  Entering history()
+2025-04-08 00:45:27,232 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:45:27,232 - DEBUG -   Entering get()
+2025-04-08 00:45:27,232 - DEBUG -    Entering _make_request()
+2025-04-08 00:45:27,232 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:45:27,233 - DEBUG - params={'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:45:27,233 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:45:27,233 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:45:27,233 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:45:27,233 - DEBUG - reusing cookie
+2025-04-08 00:45:27,233 - DEBUG - reusing crumb
+2025-04-08 00:45:27,234 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:45:27,234 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:45:27,900 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=3mo&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 1310
+2025-04-08 00:45:27,901 - DEBUG - response code=200
+2025-04-08 00:45:27,901 - DEBUG -    Exiting _make_request()
+2025-04-08 00:45:27,901 - DEBUG -   Exiting get()
+2025-04-08 00:45:27,903 - DEBUG - HRC=F: yfinance received OHLC data: 2025-01-07 05:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:45:27,907 - DEBUG - HRC=F: OHLC after cleaning: 2025-01-07 00:00:00-05:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:45:27,911 - DEBUG - HRC=F: OHLC after combining events: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:45:27,915 - DEBUG - HRC=F: yfinance returning OHLC: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:45:27,915 - DEBUG -  Exiting history()
+2025-04-08 00:45:27,916 - DEBUG - Exiting history()
+2025-04-08 00:45:27,925 - DEBUG - Entering history()
+2025-04-08 00:45:27,925 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:45:27,926 - DEBUG -  Entering history()
+2025-04-08 00:45:27,926 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:45:27,926 - DEBUG -   Entering get()
+2025-04-08 00:45:27,926 - DEBUG -    Entering _make_request()
+2025-04-08 00:45:27,926 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:45:27,926 - DEBUG - params={'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:45:27,928 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:45:27,928 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:45:27,928 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:45:27,928 - DEBUG - reusing cookie
+2025-04-08 00:45:27,929 - DEBUG - reusing crumb
+2025-04-08 00:45:27,929 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:45:27,929 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:45:28,219 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=3mo&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 1310
+2025-04-08 00:45:28,219 - DEBUG - response code=200
+2025-04-08 00:45:28,220 - DEBUG -    Exiting _make_request()
+2025-04-08 00:45:28,220 - DEBUG -   Exiting get()
+2025-04-08 00:45:28,221 - DEBUG - HRC=F: yfinance received OHLC data: 2025-01-07 05:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:45:28,223 - DEBUG - HRC=F: OHLC after cleaning: 2025-01-07 00:00:00-05:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:45:28,225 - DEBUG - HRC=F: OHLC after combining events: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:45:28,232 - DEBUG - HRC=F: yfinance returning OHLC: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:45:28,232 - DEBUG -  Exiting history()
+2025-04-08 00:45:28,232 - DEBUG - Exiting history()
+2025-04-08 00:45:34,799 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 00:45:34,800 - DEBUG - load_verify_locations cafile='C:\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 00:45:35,089 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 00:45:35,409 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002030AC68D10>
+2025-04-08 00:45:35,410 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002030AE9AD50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 00:45:36,028 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002030AACBEF0>
+2025-04-08 00:45:36,028 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 00:45:36,028 - DEBUG - send_request_headers.complete
+2025-04-08 00:45:36,029 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 00:45:36,029 - DEBUG - send_request_body.complete
+2025-04-08 00:45:36,029 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 00:45:36,333 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Apr 2025 19:15:35 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 00:45:36,334 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 00:45:36,334 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 00:45:36,334 - DEBUG - receive_response_body.complete
+2025-04-08 00:45:36,334 - DEBUG - response_closed.started
+2025-04-08 00:45:36,335 - DEBUG - response_closed.complete
+2025-04-08 00:45:36,335 - DEBUG - close.started
+2025-04-08 00:45:36,336 - DEBUG - close.complete
+2025-04-08 00:46:04,518 - INFO - C:\Users\Lenovo\Desktop\HackTheFytyreFinalRepo\I01\manufacturer\utils.py changed, reloading.
+2025-04-08 00:46:19,339 - DEBUG - Using User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-08 00:46:19,341 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:46:19,341 - DEBUG - Entering get()
+2025-04-08 00:46:19,341 - DEBUG -  Entering _make_request()
+2025-04-08 00:46:19,341 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:46:19,341 - DEBUG - params={'modules': 'recommendationTrend', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'HRC=F'}
+2025-04-08 00:46:19,341 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:46:19,342 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:46:19,342 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:46:19,345 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-08 00:46:19,345 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-08 00:46:19,346 - DEBUG - loaded persistent cookie
+2025-04-08 00:46:19,347 - DEBUG - reusing cookie
+2025-04-08 00:46:19,348 - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-08 00:46:26,815 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-08 00:46:26,816 - DEBUG - crumb = '.pJlET1ylV2'
+2025-04-08 00:46:26,816 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:46:26,817 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:46:26,818 - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-08 00:46:27,580 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2 HTTP/1.1" 404 122
+2025-04-08 00:46:27,580 - DEBUG - response code=404
+2025-04-08 00:46:27,580 - DEBUG - toggling cookie strategy basic -> csrf
+2025-04-08 00:46:27,580 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:46:27,580 - DEBUG - cookie_mode = 'csrf'
+2025-04-08 00:46:27,581 - DEBUG -    Entering _get_crumb_csrf()
+2025-04-08 00:46:27,581 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['csrf', 1, 0])
+2025-04-08 00:46:27,583 - DEBUG - Starting new HTTPS connection (1): guce.yahoo.com:443
+2025-04-08 00:46:28,103 - DEBUG - https://guce.yahoo.com:443 "GET /consent HTTP/1.1" 302 0
+2025-04-08 00:46:28,105 - DEBUG - Starting new HTTPS connection (1): www.yahoo.com:443
+2025-04-08 00:46:28,669 - DEBUG - https://www.yahoo.com:443 "GET /?guccounter=1 HTTP/1.1" 200 None
+2025-04-08 00:46:29,344 - DEBUG - Failed to find "csrfToken" in response
+2025-04-08 00:46:29,345 - DEBUG -    Exiting _get_crumb_csrf()
+2025-04-08 00:46:29,345 - DEBUG - toggling cookie strategy csrf -> basic
+2025-04-08 00:46:29,345 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:46:29,345 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-08 00:46:29,346 - DEBUG - loaded persistent cookie
+2025-04-08 00:46:29,346 - DEBUG - reusing cookie
+2025-04-08 00:46:29,367 - DEBUG - Entering post()
+2025-04-08 00:46:29,367 - DEBUG -  Entering _make_request()
+2025-04-08 00:46:29,367 - DEBUG - url=https://finance.yahoo.com/xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin
+2025-04-08 00:46:29,368 - DEBUG - params=None
+2025-04-08 00:46:29,368 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:46:29,368 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:46:29,368 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:46:29,368 - DEBUG - reusing cookie
+2025-04-08 00:46:29,369 - DEBUG - reusing cookie
+2025-04-08 00:46:29,369 - DEBUG - Starting new HTTPS connection (2): query1.finance.yahoo.com:443
+2025-04-08 00:46:29,486 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-08 00:46:29,486 - DEBUG - crumb = '.pJlET1ylV2'
+2025-04-08 00:46:29,486 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:46:29,486 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:46:29,488 - DEBUG - Starting new HTTPS connection (1): finance.yahoo.com:443
+2025-04-08 00:46:29,765 - DEBUG - https://finance.yahoo.com:443 "POST /xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin&crumb=.pJlET1ylV2 HTTP/1.1" 200 135
+2025-04-08 00:46:29,766 - DEBUG - response code=200
+2025-04-08 00:46:29,766 - DEBUG -  Exiting _make_request()
+2025-04-08 00:46:29,766 - DEBUG - Exiting post()
+2025-04-08 00:46:29,767 - DEBUG - Entering history()
+2025-04-08 00:46:29,769 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-08 00:46:29,770 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:46:29,963 - DEBUG -  Entering history()
+2025-04-08 00:46:29,964 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:46:29,964 - DEBUG -   Entering get()
+2025-04-08 00:46:29,964 - DEBUG -    Entering _make_request()
+2025-04-08 00:46:29,964 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:46:29,964 - DEBUG - params={'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:46:29,964 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:46:29,964 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:46:29,966 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:46:29,966 - DEBUG - reusing cookie
+2025-04-08 00:46:29,966 - DEBUG - reusing crumb
+2025-04-08 00:46:29,966 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:46:29,966 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:46:30,071 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=3mo&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 1323
+2025-04-08 00:46:30,072 - DEBUG - response code=200
+2025-04-08 00:46:30,072 - DEBUG -    Exiting _make_request()
+2025-04-08 00:46:30,072 - DEBUG -   Exiting get()
+2025-04-08 00:46:30,075 - DEBUG - HRC=F: yfinance received OHLC data: 2025-01-07 05:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:46:30,080 - DEBUG - HRC=F: OHLC after cleaning: 2025-01-07 00:00:00-05:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:46:30,084 - DEBUG - HRC=F: OHLC after combining events: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:46:30,089 - DEBUG - HRC=F: yfinance returning OHLC: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:46:30,089 - DEBUG -  Exiting history()
+2025-04-08 00:46:30,089 - DEBUG - Exiting history()
+2025-04-08 00:46:30,092 - DEBUG - Entering history()
+2025-04-08 00:46:30,092 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:46:30,092 - DEBUG -  Entering history()
+2025-04-08 00:46:30,092 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '1y', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:46:30,092 - DEBUG -   Entering get()
+2025-04-08 00:46:30,093 - DEBUG -    Entering _make_request()
+2025-04-08 00:46:30,093 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:46:30,093 - DEBUG - params={'range': '1y', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:46:30,093 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:46:30,093 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:46:30,093 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:46:30,093 - DEBUG - reusing cookie
+2025-04-08 00:46:30,093 - DEBUG - reusing crumb
+2025-04-08 00:46:30,094 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:46:30,094 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:46:30,200 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=1y&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 None
+2025-04-08 00:46:30,201 - DEBUG - response code=200
+2025-04-08 00:46:30,201 - DEBUG -    Exiting _make_request()
+2025-04-08 00:46:30,201 - DEBUG -   Exiting get()
+2025-04-08 00:46:30,202 - DEBUG - HRC=F: yfinance received OHLC data: 2024-04-08 04:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:46:30,204 - DEBUG - HRC=F: OHLC after cleaning: 2024-04-08 00:00:00-04:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:46:30,205 - DEBUG - HRC=F: OHLC after combining events: 2024-04-08 00:00:00-04:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:46:30,210 - DEBUG - HRC=F: yfinance returning OHLC: 2024-04-08 00:00:00-04:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:46:30,211 - DEBUG -  Exiting history()
+2025-04-08 00:46:30,211 - DEBUG - Exiting history()
+2025-04-08 00:46:36,689 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 00:46:36,690 - DEBUG - load_verify_locations cafile='C:\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 00:46:36,926 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 00:46:37,313 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018212D7F440>
+2025-04-08 00:46:37,313 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018212D15650> server_hostname='api.phidata.com' timeout=60
+2025-04-08 00:46:37,959 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018212D7C2F0>
+2025-04-08 00:46:37,959 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 00:46:37,962 - DEBUG - send_request_headers.complete
+2025-04-08 00:46:37,962 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 00:46:37,963 - DEBUG - send_request_body.complete
+2025-04-08 00:46:37,963 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 00:46:38,285 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Apr 2025 19:16:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 00:46:38,286 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 00:46:38,286 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 00:46:38,286 - DEBUG - receive_response_body.complete
+2025-04-08 00:46:38,287 - DEBUG - response_closed.started
+2025-04-08 00:46:38,287 - DEBUG - response_closed.complete
+2025-04-08 00:46:38,287 - DEBUG - close.started
+2025-04-08 00:46:38,288 - DEBUG - close.complete
+2025-04-08 00:48:05,533 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:48:05,533 - DEBUG - Entering get()
+2025-04-08 00:48:05,533 - DEBUG -  Entering _make_request()
+2025-04-08 00:48:05,534 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
+2025-04-08 00:48:05,534 - DEBUG - params={'modules': 'recommendationTrend', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'HRC=F'}
+2025-04-08 00:48:05,534 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:48:05,534 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:48:05,534 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:48:05,535 - DEBUG - reusing cookie
+2025-04-08 00:48:05,535 - DEBUG - reusing crumb
+2025-04-08 00:48:05,535 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:48:05,535 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:48:05,537 - DEBUG - Resetting dropped connection: query2.finance.yahoo.com
+2025-04-08 00:48:05,773 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2 HTTP/1.1" 404 122
+2025-04-08 00:48:05,774 - DEBUG - response code=404
+2025-04-08 00:48:05,774 - DEBUG - toggling cookie strategy basic -> csrf
+2025-04-08 00:48:05,774 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:48:05,774 - DEBUG - cookie_mode = 'csrf'
+2025-04-08 00:48:05,774 - DEBUG -    Entering _get_crumb_csrf()
+2025-04-08 00:48:05,774 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['csrf', 1, 0])
+2025-04-08 00:48:05,776 - DEBUG - Resetting dropped connection: guce.yahoo.com
+2025-04-08 00:48:06,265 - DEBUG - https://guce.yahoo.com:443 "GET /consent HTTP/1.1" 302 0
+2025-04-08 00:48:06,267 - DEBUG - Resetting dropped connection: www.yahoo.com
+2025-04-08 00:48:08,047 - DEBUG - https://www.yahoo.com:443 "GET /?guccounter=1 HTTP/1.1" 200 None
+2025-04-08 00:48:08,729 - DEBUG - Failed to find "csrfToken" in response
+2025-04-08 00:48:08,730 - DEBUG -    Exiting _get_crumb_csrf()
+2025-04-08 00:48:08,730 - DEBUG - toggling cookie strategy csrf -> basic
+2025-04-08 00:48:08,730 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:48:08,730 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-08 00:48:08,731 - DEBUG - loaded persistent cookie
+2025-04-08 00:48:08,731 - DEBUG - reusing cookie
+2025-04-08 00:48:08,733 - DEBUG - Resetting dropped connection: query1.finance.yahoo.com
+2025-04-08 00:48:08,973 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-08 00:48:08,973 - DEBUG - crumb = '.pJlET1ylV2'
+2025-04-08 00:48:08,973 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:48:08,973 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:48:09,068 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2 HTTP/1.1" 404 122
+2025-04-08 00:48:09,069 - DEBUG - response code=404
+2025-04-08 00:48:09,069 - DEBUG -  Exiting _make_request()
+2025-04-08 00:48:09,069 - DEBUG - Exiting get()
+2025-04-08 00:48:09,069 - ERROR - 404 Client Error: Not Found for url: https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F?modules=recommendationTrend&corsDomain=finance.yahoo.com&formatted=false&symbol=HRC%3DF&crumb=.pJlET1ylV2
+2025-04-08 00:48:09,071 - DEBUG - Entering post()
+2025-04-08 00:48:09,071 - DEBUG -  Entering _make_request()
+2025-04-08 00:48:09,072 - DEBUG - url=https://finance.yahoo.com/xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin
+2025-04-08 00:48:09,072 - DEBUG - params=None
+2025-04-08 00:48:09,072 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-04-08 00:48:09,072 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:48:09,072 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,072 - DEBUG - reusing cookie
+2025-04-08 00:48:09,073 - DEBUG - reusing crumb
+2025-04-08 00:48:09,073 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,073 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-04-08 00:48:09,074 - DEBUG - Resetting dropped connection: finance.yahoo.com
+2025-04-08 00:48:09,259 - DEBUG - https://finance.yahoo.com:443 "POST /xhr/ncp?queryRef=latestNews&serviceKey=ncp_fin&crumb=.pJlET1ylV2 HTTP/1.1" 200 135
+2025-04-08 00:48:09,259 - DEBUG - response code=200
+2025-04-08 00:48:09,260 - DEBUG -  Exiting _make_request()
+2025-04-08 00:48:09,260 - DEBUG - Exiting post()
+2025-04-08 00:48:09,262 - DEBUG - Entering history()
+2025-04-08 00:48:09,262 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:48:09,262 - DEBUG -  Entering history()
+2025-04-08 00:48:09,263 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:48:09,263 - DEBUG -   Entering get()
+2025-04-08 00:48:09,263 - DEBUG -    Entering _make_request()
+2025-04-08 00:48:09,263 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:48:09,263 - DEBUG - params={'range': '3mo', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:48:09,263 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:48:09,264 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:48:09,264 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,264 - DEBUG - reusing cookie
+2025-04-08 00:48:09,264 - DEBUG - reusing crumb
+2025-04-08 00:48:09,264 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,264 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:48:09,364 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=3mo&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 1310
+2025-04-08 00:48:09,364 - DEBUG - response code=200
+2025-04-08 00:48:09,365 - DEBUG -    Exiting _make_request()
+2025-04-08 00:48:09,365 - DEBUG -   Exiting get()
+2025-04-08 00:48:09,366 - DEBUG - HRC=F: yfinance received OHLC data: 2025-01-07 05:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:48:09,366 - DEBUG - HRC=F: OHLC after cleaning: 2025-01-07 00:00:00-05:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:48:09,369 - DEBUG - HRC=F: OHLC after combining events: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:48:09,373 - DEBUG - HRC=F: yfinance returning OHLC: 2025-01-07 00:00:00-05:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:48:09,373 - DEBUG -  Exiting history()
+2025-04-08 00:48:09,373 - DEBUG - Exiting history()
+2025-04-08 00:48:09,375 - DEBUG - Entering history()
+2025-04-08 00:48:09,375 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['HRC=F', 1, 0])
+2025-04-08 00:48:09,376 - DEBUG -  Entering history()
+2025-04-08 00:48:09,376 - DEBUG - HRC=F: Yahoo GET parameters: {'range': '1y', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:48:09,376 - DEBUG -   Entering get()
+2025-04-08 00:48:09,376 - DEBUG -    Entering _make_request()
+2025-04-08 00:48:09,376 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/HRC=F
+2025-04-08 00:48:09,377 - DEBUG - params={'range': '1y', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-08 00:48:09,377 - DEBUG -     Entering _get_cookie_and_crumb()
+2025-04-08 00:48:09,377 - DEBUG - cookie_mode = 'basic'
+2025-04-08 00:48:09,377 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,377 - DEBUG - reusing cookie
+2025-04-08 00:48:09,377 - DEBUG - reusing crumb
+2025-04-08 00:48:09,377 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2025-04-08 00:48:09,377 - DEBUG -     Exiting _get_cookie_and_crumb()
+2025-04-08 00:48:09,491 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/HRC=F?range=1y&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=.pJlET1ylV2 HTTP/1.1" 200 None
+2025-04-08 00:48:09,491 - DEBUG - response code=200
+2025-04-08 00:48:09,492 - DEBUG -    Exiting _make_request()
+2025-04-08 00:48:09,492 - DEBUG -   Exiting get()
+2025-04-08 00:48:09,493 - DEBUG - HRC=F: yfinance received OHLC data: 2024-04-08 04:00:00 -> 2025-04-07 18:29:52
+2025-04-08 00:48:09,494 - DEBUG - HRC=F: OHLC after cleaning: 2024-04-08 00:00:00-04:00 -> 2025-04-07 14:29:52-04:00
+2025-04-08 00:48:09,497 - DEBUG - HRC=F: OHLC after combining events: 2024-04-08 00:00:00-04:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:48:09,503 - DEBUG - HRC=F: yfinance returning OHLC: 2024-04-08 00:00:00-04:00 -> 2025-04-07 00:00:00-04:00
+2025-04-08 00:48:09,503 - DEBUG -  Exiting history()
+2025-04-08 00:48:09,503 - DEBUG - Exiting history()
+2025-04-08 00:48:16,416 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 00:48:16,417 - DEBUG - load_verify_locations cafile='C:\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 00:48:16,694 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 00:48:16,990 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001821301EB70>
+2025-04-08 00:48:16,990 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018212F200D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 00:48:17,449 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000018212AD9BB0>
+2025-04-08 00:48:17,449 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 00:48:17,450 - DEBUG - send_request_headers.complete
+2025-04-08 00:48:17,450 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 00:48:17,451 - DEBUG - send_request_body.complete
+2025-04-08 00:48:17,451 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 00:48:17,679 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 07 Apr 2025 19:18:17 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 00:48:17,680 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 00:48:17,680 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 00:48:17,680 - DEBUG - receive_response_body.complete
+2025-04-08 00:48:17,681 - DEBUG - response_closed.started
+2025-04-08 00:48:17,681 - DEBUG - response_closed.complete
+2025-04-08 00:48:17,681 - DEBUG - close.started
+2025-04-08 00:48:17,683 - DEBUG - close.complete
+>>>>>>> 842aabaf7c6e390385ba36a98909663dc2838767

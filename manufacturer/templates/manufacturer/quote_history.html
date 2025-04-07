@@ -64,6 +64,15 @@
             border-radius: 4px;
             margin-left: 10px;
         }
+        .analytics-display {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-50">
@@ -172,7 +181,6 @@
                                 <p><strong>Deadline:</strong> {{ quote.deadline }}</p>
                                 <p><strong>Quantity:</strong> {{ quote.quantity }} {{ quote.unit }}</p>
                             </div>
-                            
                         </div>
 
                         {% if quote.status == 'awarded' and quote.accepted_bid %}
@@ -192,6 +200,10 @@
                                data-commodity="{{ quote.product }}">
                                 Show Live Price
                             </a>
+                            <a href="#" class="toggle-analytics-btn text-green-600 hover:text-green-800 action-link" 
+                               data-commodity="{{ quote.product }}" data-category="{{ quote.category }}">
+                                Get Analytics
+                            </a>
                             
                             {% if quote.status == 'open' or quote.status == 'awarded' %}
                             <a href="{% url 'view_quote_bids' quote.id %}" class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded">
@@ -201,6 +213,8 @@
                         </div>
                         
                         <div class="price-display mt-2 p-2 bg-gray-50 rounded hidden" 
+                             style="display: none;"></div>
+                        <div class="analytics-display mt-2 p-2 bg-gray-50 rounded hidden" 
                              style="display: none;"></div>
                     </div>
                     {% empty %}
@@ -253,43 +267,82 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.toggle-price-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const displayDiv = this.closest('.dashboard-card').querySelector('.price-display');
-                    const commodity = this.dataset.commodity;
-                    
-                    if (displayDiv.style.display === 'none' || displayDiv.style.display === '') {
-                        displayDiv.textContent = 'Loading price...';
-                        displayDiv.style.display = 'block';
-                        this.textContent = 'Hide Price';
-                        
-                        fetch(`/manufacturer/commodity-price/?commodity=${encodeURIComponent(commodity)}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.price) {
-                                    displayDiv.textContent = `Current Price: ${data.price}`;
-                                    displayDiv.classList.remove('hidden');
-                                } else if (data.error) {
-                                    displayDiv.textContent = `Error: ${data.error}`;
-                                    displayDiv.classList.remove('hidden');
-                                } else {
-                                    displayDiv.textContent = 'Price not available';
-                                    displayDiv.classList.remove('hidden');
-                                }
-                            })
-                            .catch(() => {
-                                displayDiv.textContent = 'Failed to fetch price';
-                                displayDiv.classList.remove('hidden');
-                            });
-                    } else {
-                        displayDiv.style.display = 'none';
-                        this.textContent = 'Show Live Price';
-                    }
-                });
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    // Price button functionality
+    document.querySelectorAll('.toggle-price-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const displayDiv = this.closest('.dashboard-card').querySelector('.price-display');
+            const commodity = this.dataset.commodity;
+            
+            if (displayDiv.style.display === 'none' || displayDiv.style.display === '') {
+                displayDiv.textContent = 'Loading price...';
+                displayDiv.style.display = 'block';
+                this.textContent = 'Hide Price';
+                
+                fetch(`/manufacturer/commodity-price/?commodity=${encodeURIComponent(commodity)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.price) {
+                            displayDiv.textContent = `Current Price: ${data.price}`;
+                            displayDiv.classList.remove('hidden');
+                        } else if (data.error) {
+                            displayDiv.textContent = `Error: ${data.error}`;
+                            displayDiv.classList.remove('hidden');
+                        } else {
+                            displayDiv.textContent = 'Price not available';
+                            displayDiv.classList.remove('hidden');
+                        }
+                    })
+                    .catch(() => {
+                        displayDiv.textContent = 'Failed to fetch price';
+                        displayDiv.classList.remove('hidden');
+                    });
+            } else {
+                displayDiv.style.display = 'none';
+                this.textContent = 'Show Live Price';
+            }
         });
+    });
+
+    // Analytics button functionality
+    document.querySelectorAll('.toggle-analytics-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const displayDiv = this.closest('.dashboard-card').querySelector('.analytics-display');
+            const commodity = this.dataset.commodity;
+            const category = this.dataset.category;
+            
+            if (displayDiv.style.display === 'none' || displayDiv.style.display === '') {
+                displayDiv.textContent = 'Loading analytics...';
+                displayDiv.style.display = 'block';
+                this.textContent = 'Hide Analytics';
+                
+                fetch(`/manufacturer/commodity-analytics/?commodity=${encodeURIComponent(commodity)}&category=${encodeURIComponent(category)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.analytics) {
+                            displayDiv.textContent = data.analytics;
+                            displayDiv.classList.remove('hidden');
+                        } else if (data.error) {
+                            displayDiv.textContent = `Error: ${data.error}`;
+                            displayDiv.classList.remove('hidden');
+                        } else {
+                            displayDiv.textContent = 'Analytics not available';
+                            displayDiv.classList.remove('hidden');
+                        }
+                    })
+                    .catch(() => {
+                        displayDiv.textContent = 'Failed to fetch analytics';
+                        displayDiv.classList.remove('hidden');
+                    });
+            } else {
+                displayDiv.style.display = 'none';
+                this.textContent = 'Get Analytics';
+            }
+        });
+    });
+});
     </script>
 </body>
 </html>
