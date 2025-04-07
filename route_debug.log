@@ -2822,3 +2822,15 @@ Traceback (most recent call last):
   File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
     raise self.model.DoesNotExist(
 manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-07 22:45:42,779 - WARNING - Not Found: /favicon.ico
+2025-04-07 23:02:40,557 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:02:40,558 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:02:40,558 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:02:40,559 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:02:41,109 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 440
+2025-04-07 23:02:41,110 - DEBUG - RateLimiter sleep(0.44805690000066534)
+2025-04-07 23:02:41,559 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:02:42,180 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 23:02:42,182 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:02:42,848 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 23:03:25,119 - WARNING - Forbidden (CSRF token from POST incorrect.): /manufacturer/login/
