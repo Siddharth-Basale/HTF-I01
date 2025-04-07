@@ -3,6 +3,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from manufacturer.models import QuoteRequest
 
+
+# Add this at the top of supplier/forms.py
+from .models import SupplierInventory  # Add this import
+
+# Then add the form class
+class InventoryItemForm(forms.ModelForm):
+    class Meta:
+        model = SupplierInventory
+        fields = ['product_name', 'quantity', 'unit', 'price_per_unit', 'notes']
+        widgets = {
+            'notes': forms.Textarea(attrs={'rows': 3}),
+        }
+
 class SupplierRegistrationForm(UserCreationForm):
     first_name = forms.CharField(max_length=100, required=True)
     last_name = forms.CharField(max_length=100, required=True)
@@ -27,6 +40,9 @@ class SupplierRegistrationForm(UserCreationForm):
 class SupplierLoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+
+
 
 
 # class BidForm(forms.Form):

@@ -29,6 +29,8 @@ class Supplier(models.Model):
     def __str__(self):
         return self.company_name
     
+
+    
 class Bid(models.Model):
     supplier = models.ForeignKey('Supplier', on_delete=models.CASCADE)
     quote = models.ForeignKey(QuoteRequest, on_delete=models.CASCADE)
@@ -149,3 +151,29 @@ class SupplierReview(models.Model):
         
     def __str__(self):
         return f"Review for {self.supplier.company_name} by {self.manufacturer.company_name}"
+    
+# Add this at the end of supplier/models.py
+class SupplierInventory(models.Model):
+    UNIT_CHOICES = [
+        ('kg', 'Kilograms'),
+        ('g', 'Grams'),
+        ('lb', 'Pounds'),
+        ('oz', 'Ounces'),
+        ('l', 'Liters'),
+        ('ml', 'Milliliters'),
+        ('unit', 'Units'),
+        ('box', 'Boxes'),
+        ('pack', 'Packs'),
+       
+    ]
+    
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, related_name='inventory_items')
+    product_name = models.CharField(max_length=200)
+    quantity = models.DecimalField(max_digits=10, decimal_places=2)
+    unit = models.CharField(max_length=10, choices=UNIT_CHOICES)
+    price_per_unit = models.DecimalField(max_digits=10, decimal_places=2)
+    last_updated = models.DateTimeField(auto_now=True)
+    notes = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return f"{self.product_name} ({self.quantity} {self.get_unit_display()})"
