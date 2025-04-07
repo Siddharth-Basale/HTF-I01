@@ -56,7 +56,8 @@ def supplier_register(request):
                 website=form.cleaned_data['website'],
                 phone_number=form.cleaned_data['phone_number'],
                 key_services=form.cleaned_data['key_services'],
-                wallet_address=form.cleaned_data['wallet_address']
+                wallet_address=form.cleaned_data['wallet_address'],
+                commodity_categories=form.cleaned_data['commodity_categories']
             )
 
             # Send welcome email

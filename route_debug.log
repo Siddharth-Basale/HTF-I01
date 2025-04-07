@@ -2822,3 +2822,159 @@ Traceback (most recent call last):
   File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
     raise self.model.DoesNotExist(
 manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-07 23:04:40,308 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:06:18,405 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:09:47,606 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:09:49,209 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:09:50,276 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:14:50,614 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:20:49,855 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:21:59,145 - WARNING - Not Found: /manufacturer/
+2025-04-07 23:22:04,670 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:29:59,555 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:33:23,908 - WARNING - Forbidden (CSRF token missing.): /supplier/register/
+2025-04-07 23:33:31,135 - WARNING - Not Found: /supplier/
+2025-04-07 23:33:37,107 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:34:16,727 - WARNING - Forbidden (CSRF token missing.): /supplier/register/
+2025-04-07 23:40:46,197 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 23:43:08,330 - ERROR - Internal Server Error: /supplier/manufacturer-profile/3/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 304, in view_manufacturer_profile
+    supplier = Supplier.objects.get(user=request.user)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+supplier.models.Supplier.DoesNotExist: Supplier matching query does not exist.
+2025-04-07 23:43:15,664 - ERROR - Internal Server Error: /supplier/manufacturer-profile/2/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 304, in view_manufacturer_profile
+    supplier = Supplier.objects.get(user=request.user)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+supplier.models.Supplier.DoesNotExist: Supplier matching query does not exist.
+2025-04-07 23:43:27,807 - WARNING - Not Found: /supplier/bid/3/
+2025-04-07 23:43:34,039 - WARNING - Not Found: /supplier/bid/2/
+2025-04-07 23:43:47,049 - WARNING - Not Found: /supplier/bid/2/
+2025-04-07 23:44:11,358 - WARNING - Not Found: /supplier/bid/2/
+2025-04-07 23:44:23,288 - WARNING - Not Found: /supplier/
+2025-04-07 23:45:14,174 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:45:14,174 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 23:45:14,174 - INFO - Geocoder initialized successfully
+2025-04-07 23:45:14,174 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mumbai%2C+Maharashtra&format=json&limit=1
+2025-04-07 23:45:14,174 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 23:45:15,331 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Mumbai%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 441
+2025-04-07 23:45:15,331 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Banglore%2C+Karnataka&format=json&limit=1
+2025-04-07 23:45:16,192 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Banglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 580
+2025-04-07 23:45:16,192 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 23:45:16,891 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-08 00:04:14,148 - ERROR - Internal Server Error: /manufacturer/quote-history/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 256, in quote_history
+    manufacturer = Manufacturer.objects.get(user=request.user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-08 00:05:32,221 - ERROR - Internal Server Error: /supplier/profile/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 230, in view_profile
+    supplier = Supplier.objects.get(user=request.user)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+supplier.models.Supplier.DoesNotExist: Supplier matching query does not exist.
+2025-04-08 00:05:43,072 - ERROR - Internal Server Error: /supplier/profile/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 230, in view_profile
+    supplier = Supplier.objects.get(user=request.user)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+supplier.models.Supplier.DoesNotExist: Supplier matching query does not exist.
+2025-04-08 00:06:09,090 - ERROR - Internal Server Error: /negotiation/payment-gateway/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 498, in payment_gateway_view
+    return render(request, 'manufacturer/paymentGateway.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: manufacturer/paymentGateway.html
+2025-04-08 00:10:36,438 - ERROR - Internal Server Error: /supplier/profile/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 230, in view_profile
+    supplier = Supplier.objects.get(user=request.user)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+supplier.models.Supplier.DoesNotExist: Supplier matching query does not exist.
+2025-04-08 00:13:41,467 - WARNING - Not Found: /api/placeholder/300/300

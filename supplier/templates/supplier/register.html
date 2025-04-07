@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supplier Registration | Supply Chain Portal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Add Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -47,6 +49,25 @@
         }
         .info-card {
             background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+        }
+        /* Select2 customization */
+        .select2-container--default .select2-selection--multiple {
+            border: 1px solid #d1d5db !important;
+            border-radius: 0.375rem !important;
+            min-height: 42px !important;
+            padding: 0.25rem !important;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #10b981 !important;
+            border-color: #059669 !important;
+            color: white !important;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #d1fae5 !important;
+            color: #065f46 !important;
+        }
+        .select2-container--default .select2-search--inline .select2-search__field {
+            margin-top: 0 !important;
         }
     </style>
 </head>
@@ -158,77 +179,136 @@
                 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="{{ form.first_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                        {{ form.first_name }}
+                        <label for="first_name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your first name">
                     </div>
                     <div>
-                        <label for="{{ form.last_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                        {{ form.last_name }}
+                        <label for="last_name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your last name">
                     </div>
                 </div>
 
                 <div>
-                    <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                    {{ form.email }}
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your email address">
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-                        {{ form.username }}
+                        <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                        <input type="text" id="username" name="username" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Choose a username">
                     </div>
                     <div>
-                        <label for="{{ form.phone_number.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        {{ form.phone_number }}
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                        {{ form.password1 }}
-                    </div>
-                    <div>
-                        <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
-                        {{ form.password2 }}
+                        <label for="phone_number" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone_number" name="phone_number" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your phone number">
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="{{ form.company_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                        {{ form.company_name }}
+                        <label for="password1" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" id="password1" name="password1" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Create a password">
                     </div>
                     <div>
-                        <label for="{{ form.business_type.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Business Type</label>
-                        {{ form.business_type }}
+                        <label for="password2" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                        <input type="password" id="password2" name="password2" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Confirm your password">
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="{{ form.city.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">City</label>
-                        {{ form.city }}
+                        <label for="company_name" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <input type="text" id="company_name" name="company_name" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your company name">
                     </div>
                     <div>
-                        <label for="{{ form.state.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">State</label>
-                        {{ form.state }}
+                        <label for="business_type" class="block text-sm font-medium text-gray-700 mb-2">Business Type</label>
+                        <select id="business_type" name="business_type" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input">
+                            <option value="">Select business type</option>
+                            <option value="manufacturer">Manufacturer</option>
+                            <option value="distributor">Distributor</option>
+                            <option value="retailer">Retailer</option>
+                            <option value="wholesaler">Wholesaler</option>
+                            <option value="service_provider">Service Provider</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                        <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your city">
+                    </div>
+                    <div>
+                        <label for="state" class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                        <input type="text" id="state" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Enter your state/province">
                     </div>
                 </div>
 
                 <div>
-                    <label for="{{ form.website.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Website (Optional)</label>
-                    {{ form.website }}
+                    <label for="website" class="block text-sm font-medium text-gray-700 mb-2">Website (Optional)</label>
+                    <input type="url" id="website" name="website" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="https://www.example.com">
+                </div>
+
+                <!-- Updated Commodity Categories Field with Select2 -->
+                <div>
+                    <label for="commodity_categories" class="block text-sm font-medium text-gray-700 mb-2">Commodity Categories</label>
+                    <select id="commodity_categories" 
+                            name="commodity_categories" 
+                            multiple="multiple"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md form-input h-auto select2">
+                        <option value="">Choose</option>
+                        <optgroup label="Agricultural Raw Materials">
+                            <option value="copra">Copra</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="hides">Hides</option>
+                            <option value="rubber">Rubber</option>
+                            <option value="wool">Wool</option>
+                        </optgroup>
+                        <optgroup label="Agriculture">
+                            <option value="coffee">Coffee</option>
+                            <option value="other_agriculture">Other Agriculture</option>
+                            <option value="peanuts">Peanuts</option>
+                            <option value="soybeans">Soybeans</option>
+                            <option value="sugar">Sugar</option>
+                            <option value="tea">Tea</option>
+                            <option value="tobacco">Tobacco</option>
+                        </optgroup>
+                        <optgroup label="Energy">
+                            <option value="coal">Coal</option>
+                            <option value="crude_oil">Crude Oil</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="gasoline">Gasoline</option>
+                            <option value="natural_gas">Natural Gas</option>
+                        </optgroup>
+                        <optgroup label="Metals">
+                            <option value="aluminum">Aluminum</option>
+                            <option value="antimony">Antimony</option>
+                            <option value="copper">Copper</option>
+                            <option value="gold">Gold</option>
+                            <option value="iron">Iron</option>
+                            <option value="lead">Lead</option>
+                            <option value="manganese">Manganese</option>
+                            <option value="nickel">Nickel</option>
+                            <option value="other_metals">Other Metals</option>
+                            <option value="silver">Silver</option>
+                            <option value="steel">Steel</option>
+                            <option value="tin">Tin</option>
+                            <option value="titanium">Titanium</option>
+                            <option value="tungsten">Tungsten</option>
+                            <option value="zinc">Zinc</option>
+                        </optgroup>
+                    </select>
+                    <p class="text-xs text-gray-500 mt-1">Start typing to search or click to select multiple categories</p>
                 </div>
 
                 <div>
-                    <label for="{{ form.key_services.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Key Services</label>
-                    {{ form.key_services }}
+                    <label for="key_services" class="block text-sm font-medium text-gray-700 mb-2">Key Services</label>
+                    <textarea id="key_services" name="key_services" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="Describe your key services or products"></textarea>
                 </div>
 
                 <div>
-                    <label for="{{ form.wallet_address.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Ethereum Wallet Address</label>
-                    {{ form.wallet_address }}
+                    <label for="wallet_address" class="block text-sm font-medium text-gray-700 mb-2">Ethereum Wallet Address</label>
+                    <input type="text" id="wallet_address" name="wallet_address" class="w-full px-3 py-2 border border-gray-300 rounded-md form-input" placeholder="0x...">
                     <p class="text-xs text-gray-500 mt-1">Please enter a valid Ethereum wallet address (0x...)</p>
                 </div>
 
@@ -276,28 +356,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- FAQ Section -->
-        <!-- <div class="bg-white rounded-xl shadow-lg p-8 mt-8 card-hover">
-            <h2 class="text-2xl font-bold text-green-700 mb-6">Frequently Asked Questions</h2>
-            
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">How does the bidding process work?</h3>
-                    <p class="text-gray-600 mt-2">Once registered, you'll gain access to open RFQs from manufacturers. You can submit competitive bids, specifying price, delivery time, and transport details. Manufacturers review all bids and select the most suitable supplier.</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">Why do I need an Ethereum wallet?</h3>
-                    <p class="text-gray-600 mt-2">Our platform uses blockchain technology for secure, transparent transactions. Your Ethereum wallet allows you to receive payments directly when your bid is accepted and goods are delivered.</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">How are supplier ratings calculated?</h3>
-                    <p class="text-gray-600 mt-2">After each completed transaction, manufacturers can rate suppliers on a 5-star scale based on delivery speed, communication, product quality, and overall satisfaction. These ratings help build your reputation on the platform.</p>
-                </div>
-            </div>
-        </div> -->
     </main>
 
     <!-- Footer -->
@@ -333,75 +391,87 @@
         </div>
     </footer>
 
+    <!-- Add jQuery and Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            const isClickInsideMenu = mobileNav.contains(event.target);
-            const isClickOnToggle = mobileMenuToggle.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnToggle) {
-                mobileNav.classList.remove('active');
-            }
-        });
-
-        // Form input styling
-        document.addEventListener('DOMContentLoaded', function() {
-            const formInputs = document.querySelectorAll('input, textarea, select');
-            formInputs.forEach(input => {
-                input.classList.add('w-full', 'px-3', 'py-2', 'border', 'border-gray-300', 'rounded-md', 'form-input');
+        // Initialize Select2
+        $(document).ready(function() {
+            $('.select2').select2({
+                placeholder: "Select categories",
+                allowClear: true,
+                width: '100%'
             });
-            
-            // Style form paragraphs for better appearance
-            const formParagraphs = document.querySelectorAll('form p');
-            formParagraphs.forEach(p => {
-                p.classList.add('mb-4');
-                const label = p.querySelector('label');
-                if (label) {
-                    label.classList.add('block', 'text-sm', 'font-medium', 'text-gray-700', 'mb-2');
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                const isClickInsideMenu = mobileNav.contains(event.target);
+                const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle) {
+                    mobileNav.classList.remove('active');
                 }
             });
-            
-            // Add animation effects to cards
-            const cards = document.querySelectorAll('.card-hover');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-5px)';
+
+            // Form input styling
+            document.addEventListener('DOMContentLoaded', function() {
+                const formInputs = document.querySelectorAll('input, textarea, select:not(.select2-hidden-accessible)');
+                formInputs.forEach(input => {
+                    input.classList.add('w-full', 'px-3', 'py-2', 'border', 'border-gray-300', 'rounded-md', 'form-input');
                 });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Validate Ethereum wallet address format
-            const walletInput = document.querySelector('[id*="wallet_address"]');
-            if (walletInput) {
-                walletInput.addEventListener('blur', function() {
-                    const value = this.value.trim();
-                    if (value && (!value.startsWith('0x') || value.length !== 42)) {
-                        this.classList.add('border-red-500');
-                        let errorMsg = document.getElementById('wallet-error');
-                        if (!errorMsg) {
-                            errorMsg = document.createElement('p');
-                            errorMsg.id = 'wallet-error';
-                            errorMsg.classList.add('text-red-500', 'text-sm', 'mt-1');
-                            errorMsg.textContent = 'Please enter a valid Ethereum wallet address starting with 0x (42 characters total)';
-                            this.parentNode.appendChild(errorMsg);
-                        }
-                    } else {
-                        this.classList.remove('border-red-500');
-                        const errorMsg = document.getElementById('wallet-error');
-                        if (errorMsg) errorMsg.remove();
+                
+                // Style form paragraphs for better appearance
+                const formParagraphs = document.querySelectorAll('form p');
+                formParagraphs.forEach(p => {
+                    p.classList.add('mb-4');
+                    const label = p.querySelector('label');
+                    if (label) {
+                        label.classList.add('block', 'text-sm', 'font-medium', 'text-gray-700', 'mb-2');
                     }
                 });
-            }
+                
+                // Add animation effects to cards
+                const cards = document.querySelectorAll('.card-hover');
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-5px)';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0)';
+                    });
+                });
+                
+                // Validate Ethereum wallet address format
+                const walletInput = document.querySelector('[id*="wallet_address"]');
+                if (walletInput) {
+                    walletInput.addEventListener('blur', function() {
+                        const value = this.value.trim();
+                        if (value && (!value.startsWith('0x') || value.length !== 42)) {
+                            this.classList.add('border-red-500');
+                            let errorMsg = document.getElementById('wallet-error');
+                            if (!errorMsg) {
+                                errorMsg = document.createElement('p');
+                                errorMsg.id = 'wallet-error';
+                                errorMsg.classList.add('text-red-500', 'text-sm', 'mt-1');
+                                errorMsg.textContent = 'Please enter a valid Ethereum wallet address starting with 0x (42 characters total)';
+                                this.parentNode.appendChild(errorMsg);
+                            }
+                        } else {
+                            this.classList.remove('border-red-500');
+                            const errorMsg = document.getElementById('wallet-error');
+                            if (errorMsg) errorMsg.remove();
+                        }
+                    });
+                }
+            });
         });
     </script>
 </body>
