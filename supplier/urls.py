@@ -17,4 +17,5 @@ urlpatterns = [
     path('negotiations/<int:negotiation_id>/', views.supplier_view_negotiation, name='supplier_view_negotiation'),
     path('submit-review/<int:bid_id>/', views.submit_review, name='submit_review'),
     path('calculate-route/', views.calculate_route, name='calculate_route'),
+    path('ai-suggestions/', views.ai_suggestions, name='ai_suggestions'),
 ]

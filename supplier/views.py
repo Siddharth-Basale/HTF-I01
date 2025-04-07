@@ -602,3 +602,54 @@ def delete_inventory_item(request, item_id):
         messages.success(request, 'Inventory item deleted successfully!')
     
     return redirect('supplier_inventory')
+
+
+from django.db import connection
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def ai_suggestions(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Authentication required'}, status=401)
+    
+    try:
+        # Get the top 5 most requested product categories
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT category, COUNT(*) as request_count 
+                FROM manufacturer_quoterequest 
+                WHERE status = 'open'
+                GROUP BY category 
+                ORDER BY request_count DESC 
+                LIMIT 5
+            """)
+            categories = cursor.fetchall()
+            
+            # Get top products in each category
+            category_data = []
+            for category in categories:
+                cursor.execute("""
+                    SELECT product, COUNT(*) as product_count 
+                    FROM manufacturer_quoterequest 
+                    WHERE category = %s AND status = 'open'
+                    GROUP BY product 
+                    ORDER BY product_count DESC 
+                    LIMIT 3
+                """, [category[0]])
+                products = cursor.fetchall()
+                
+                category_data.append({
+                    'name': category[0],
+                    'request_count': category[1],
+                    'top_products': [p[0] for p in products]
+                })
+            
+        return JsonResponse({
+            'top_categories': category_data,
+            'message': 'AI analysis of current market demand'
+        })
+        
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
