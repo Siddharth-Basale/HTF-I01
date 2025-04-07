@@ -2650,3 +2650,175 @@ django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '
 2025-04-07 18:48:55,792 - INFO - C:\Users\Ganesh\Hackathons\supplyChainGS\Supplychain\manufacturer\models.py changed, reloading.
 2025-04-07 18:49:27,341 - WARNING - Not Found: /api/placeholder/300/300
 2025-04-07 18:52:19,795 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 19:50:08,838 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 19:51:38,899 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 19:56:14,677 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 19:57:34,784 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 19:58:37,088 - WARNING - Not Found: /supplier/bid/1/
+2025-04-07 19:59:14,486 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 19:59:14,486 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 19:59:14,486 - INFO - Geocoder initialized successfully
+2025-04-07 19:59:14,486 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Banglore%2C+Karnataka&format=json&limit=1
+2025-04-07 19:59:14,486 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 19:59:15,151 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Banglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 580
+2025-04-07 19:59:15,151 - DEBUG - RateLimiter sleep(0.3307663999730721)
+2025-04-07 19:59:15,498 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 19:59:16,335 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 19:59:16,335 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 19:59:16,968 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 19:59:45,890 - ERROR - Internal Server Error: /manufacturer/quote-history/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 256, in quote_history
+    manufacturer = Manufacturer.objects.get(user=request.user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-07 21:02:40,040 - ERROR - Internal Server Error: /manufacturer/direct-accept-bid/1/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 178, in accept_bid
+    return redirect('submit_feedback', bid_id=bid.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'submit_feedback' not found. 'submit_feedback' is not a valid view function or pattern name.
+2025-04-07 21:02:51,653 - ERROR - Internal Server Error: /negotiation/payment-gateway/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 498, in payment_gateway_view
+    return render(request, 'manufacturer/paymentGateway.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: manufacturer/paymentGateway.html
+2025-04-07 21:13:11,068 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:16:19,737 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:19:27,740 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:22:56,442 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:33:03,418 - WARNING - Forbidden (CSRF token from POST incorrect.): /supplier/register/
+2025-04-07 21:33:15,150 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:34:19,987 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:36:28,928 - WARNING - Not Found: /api/placeholder/300/300
+2025-04-07 21:49:43,656 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:49:43,657 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:49:43,657 - INFO - Geocoder initialized successfully
+2025-04-07 21:49:43,658 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Nashik%2C+Maharashtra&format=json&limit=1
+2025-04-07 21:49:43,660 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 21:49:44,407 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Nashik%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 440
+2025-04-07 21:49:44,409 - DEBUG - RateLimiter sleep(0.24939670000458136)
+2025-04-07 21:49:44,659 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 21:49:45,454 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 21:49:45,456 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 21:49:47,094 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 21:51:26,451 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:51:26,452 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:51:26,452 - INFO - Geocoder initialized successfully
+2025-04-07 21:51:26,453 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Manglore%2C+Karnataka&format=json&limit=1
+2025-04-07 21:51:26,454 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 21:51:27,235 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Manglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 550
+2025-04-07 21:51:27,236 - DEBUG - RateLimiter sleep(0.217012099979911)
+2025-04-07 21:51:27,454 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 21:51:28,610 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 21:51:28,613 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 21:51:30,152 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 21:52:14,739 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:52:14,740 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:52:14,740 - INFO - Geocoder initialized successfully
+2025-04-07 21:52:14,741 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Manglore%2C+Karnataka&format=json&limit=1
+2025-04-07 21:52:14,742 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 21:52:16,140 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Manglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 550
+2025-04-07 21:52:16,141 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 21:52:16,445 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 21:53:22,662 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:53:22,662 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:53:22,663 - INFO - Geocoder initialized successfully
+2025-04-07 21:53:22,664 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Manglore%2C+Karnataka&format=json&limit=1
+2025-04-07 21:53:22,665 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 21:53:24,182 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Manglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 550
+2025-04-07 21:53:24,182 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Pune%2C+Maharashtra&format=json&limit=1
+2025-04-07 21:53:25,111 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Pune%2C+Maharashtra&format=json&limit=1 HTTP/11" 200 436
+2025-04-07 21:53:25,113 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 21:53:26,035 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 21:54:10,064 - ERROR - Internal Server Error: /manufacturer/quote-history/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 256, in quote_history
+    manufacturer = Manufacturer.objects.get(user=request.user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-07 21:56:07,954 - WARNING - Not Found: /manufacturer/
+2025-04-07 21:58:19,366 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:58:19,367 - DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-04-07 21:58:19,367 - INFO - Geocoder initialized successfully
+2025-04-07 21:58:19,368 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mysuru%2C+Karnataka&format=json&limit=1
+2025-04-07 21:58:19,369 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-07 21:58:22,012 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Mysuru%2C+Karnataka&format=json&limit=1 HTTP/11" 200 438
+2025-04-07 21:58:22,013 - DEBUG - Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Banglore%2C+Karnataka&format=json&limit=1
+2025-04-07 21:58:22,409 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=Banglore%2C+Karnataka&format=json&limit=1 HTTP/11" 200 580
+2025-04-07 21:58:22,413 - DEBUG - Starting new HTTPS connection (1): api.openrouteservice.org:443
+2025-04-07 21:58:23,082 - DEBUG - https://api.openrouteservice.org:443 "POST /v2/directions/driving-car HTTP/11" 200 None
+2025-04-07 21:59:00,608 - ERROR - Internal Server Error: /manufacturer/quote-history/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 256, in quote_history
+    manufacturer = Manufacturer.objects.get(user=request.user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
