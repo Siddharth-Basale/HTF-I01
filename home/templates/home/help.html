@@ -192,6 +192,10 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="/">Home</a>
+                <a href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="{% url 'about' %}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="{% url 'services' %}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="{% url 'contact' %}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
                 <a href="{% url 'manufacturer_login' %}">Manufacturer Login</a>
                 <a href="{% url 'supplier_login' %}">Supplier Login</a>
             </div>
