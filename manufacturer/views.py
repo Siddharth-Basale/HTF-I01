@@ -416,20 +416,24 @@ def analyze_supplier(request, supplier_id):
         db_url = "sqlite:///db.sqlite3"
         agent = Agent(
             tools=[SQLTools(db_url=db_url)],
-            model=Gemini(id="gemini-2.0-flash-exp", temperature=0.4)
+            model=Gemini(id="gemini-2.0-flash-exp", temperature=0.4),
+            debug_mode=True,
+            system_prompt="""You are a specialized AI agent that analyzes supplier feedback comments.
+            Your task is to analyze the feedback comments and provide a final recommendation based on the analysis.""",
+            markdown=True,
         )
 
         # Get the analysis
         response = agent.run(
-            f"""Analyze all feedback comments for {supplier.company_name} (ID: {supplier_id}) from the supplier_supplierreview table and provide ONLY the final recommendation based on:
-            1. The key points from each feedback
-            2. Common themes across all feedbacks
-            3. Overall supplier performance assessment
-            4. Specific strengths and weaknesses
-            5. Areas needing improvement
-            
-            Present JUST the recommendation in one concise paragraph.
-            In the response, always refer to the supplier by their company name ({supplier.company_name}) rather than "Supplier {supplier_id}"."""
+            f"""Analyze all feedback comments for {supplier.company_name} (ID: {supplier_id}) from the supplier_supplierreview table using the 'comment' column and provide ONLY the final recommendation based on:
+    1. The key points from each feedback
+    2. Common themes across all feedbacks
+    3. Overall supplier performance assessment
+    4. Specific strengths and weaknesses
+    
+
+    Present JUST the recommendation in one concise paragraph.
+    In the response, always refer to the supplier by their company name ({supplier.company_name}) rather than "Supplier {supplier_id}"."""
         )
 
         return JsonResponse({
