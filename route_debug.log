@@ -5478,3 +5478,34 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 363: '
 2025-04-08 09:09:09,263 - DEBUG - response_closed.complete
 2025-04-08 09:09:09,264 - DEBUG - close.started
 2025-04-08 09:09:09,264 - DEBUG - close.complete
+2025-04-08 10:02:57,030 - WARNING - Not Found: /favicon.ico
+2025-04-08 10:05:52,739 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\urls.py changed, reloading.
+2025-04-08 10:05:59,864 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\urls.py changed, reloading.
+2025-04-08 10:07:59,721 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\views.py changed, reloading.
+2025-04-08 10:08:05,937 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\views.py changed, reloading.
+2025-04-08 10:11:10,532 - ERROR - Internal Server Error: /help/
+Traceback (most recent call last):
+  File "C:\Users\ajink\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajink\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajink\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\clickjacking.py", line 27, in process_response
+    if response.get("X-Frame-Options") is not None:
+       ^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+2025-04-08 10:13:15,967 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\views.py changed, reloading.
+2025-04-08 10:13:23,373 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\views.py changed, reloading.
+2025-04-08 10:13:29,660 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\views.py changed, reloading.
+2025-04-08 11:10:30,802 - WARNING - Not Found: /mission
+2025-04-08 11:10:36,564 - WARNING - Not Found: /legal
+2025-04-08 11:10:43,945 - WARNING - Not Found: /cookies
+2025-04-08 11:10:58,509 - WARNING - Not Found: /cookies
+2025-04-08 11:11:03,623 - WARNING - Not Found: /mission
+2025-04-08 11:11:07,571 - WARNING - Not Found: /team
+2025-04-08 11:11:12,273 - WARNING - Not Found: /partners
+2025-04-08 11:11:53,946 - WARNING - Not Found: /team
+2025-04-08 11:11:58,745 - WARNING - Not Found: /team
+2025-04-08 11:12:03,452 - WARNING - Not Found: /partners
+2025-04-08 11:17:21,093 - WARNING - Not Found: /mission
