@@ -1,3 +1,4 @@
+import re
 from manufacturer.models import QuoteRequest
 from .models import Supplier, Bid
 from .forms import BidForm
@@ -603,53 +604,112 @@ def delete_inventory_item(request, item_id):
     
     return redirect('supplier_inventory')
 
-
-from django.db import connection
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth.decorators import login_required
+import logging
+from phi.agent import Agent
+from phi.tools.sql import SQLTools
+from phi.model.google import Gemini
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 @login_required
 def ai_suggestions(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'error': 'Authentication required'}, status=401)
-    
+    if not request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'error': 'Invalid request'}, status=400)
+
     try:
-        # Get the top 5 most requested product categories
-        with connection.cursor() as cursor:
-            cursor.execute("""
-                SELECT category, COUNT(*) as request_count 
-                FROM manufacturer_quoterequest 
-                WHERE status = 'open'
-                GROUP BY category 
-                ORDER BY request_count DESC 
-                LIMIT 5
-            """)
-            categories = cursor.fetchall()
-            
-            # Get top products in each category
-            category_data = []
-            for category in categories:
-                cursor.execute("""
-                    SELECT product, COUNT(*) as product_count 
-                    FROM manufacturer_quoterequest 
-                    WHERE category = %s AND status = 'open'
-                    GROUP BY product 
-                    ORDER BY product_count DESC 
-                    LIMIT 3
-                """, [category[0]])
-                products = cursor.fetchall()
-                
-                category_data.append({
-                    'name': category[0],
-                    'request_count': category[1],
-                    'top_products': [p[0] for p in products]
-                })
-            
-        return JsonResponse({
-            'top_categories': category_data,
-            'message': 'AI analysis of current market demand'
-        })
+        db_url = "sqlite:///db.sqlite3"
+        agent = Agent(tools=[SQLTools(db_url=db_url)], model=Gemini(id="gemini-2.0-flash-exp", temperature=0.4))
+
+        analysis_prompt = """Analyze the 'manufacturer_quoterequest' table to:
+        1. Extract product details (name, category, specifications) and request patterns
+        2. Identify high-demand products/categories based on:
+           - Frequency of requests
+           - Quantity requested (if available)
+           - Recent request trends
+        3. Generate an ordered list (high to low demand) with:
+           - Top categories (with justification)
+           - Top products in each category
+           - Ranked by quantity asked
+        4. Format output as:
         
+        **Category Analysis:**
+            1. Category Name
+               - Request Count: [number]
+               - Total Quantity: [number] [unit]
+               - Top Products: [comma separated list]
+            2. Category Name
+               - Request Count: [number]
+               - Total Quantity: [number] [unit]
+               - Top Products: [comma separated list]
+           
+        5. After the category analysis, provide:
+        **Supplier Recommendations:**
+            1. [Product Name] - [Detailed reason for increasing production]
+            2. [Product Name] - [Detailed reason]
+            3. [Product Name] - [Detailed reason]"""
+
+        response = agent.run(analysis_prompt, stream=False)
+        response_text = str(response.content) if hasattr(response, 'content') else str(response)
+        
+        # Parse the response to extract structured data
+        top_categories = []
+        supplier_recommendations = []
+        
+        # Parse categories
+        category_pattern = re.compile(
+            r"(\d+)\.\s(.+?)\s*\n\s*-\s*Request Count:\s*(\d+)\s*\n\s*-\s*Total Quantity:\s*([\d,]+)\s*(\w+)\s*\n\s*-\s*Top Products:\s*(.+)",
+            re.MULTILINE
+        )
+        
+        for match in category_pattern.finditer(response_text):
+            category = {
+                "name": match.group(2).strip(),
+                "request_count": int(match.group(3).replace(',', '')),
+                "total_quantity": {
+                    "value": int(match.group(4).replace(',', '')),
+                    "unit": match.group(5).strip()
+                },
+                "top_products": [p.strip() for p in match.group(6).split(",")]
+            }
+            top_categories.append(category)
+        
+        # Parse supplier recommendations
+        recommendation_pattern = re.compile(
+            r"\d+\.\s(.+?)\s*-\s*(.+)",
+            re.MULTILINE
+        )
+        
+        recommendations_section = re.search(r"\*\*Supplier Recommendations:\*\*(.*?)(?=\n\*\*|\Z)", response_text, re.DOTALL)
+        if recommendations_section:
+            for match in recommendation_pattern.finditer(recommendations_section.group(1)):
+                supplier_recommendations.append({
+                    "product": match.group(1).strip(),
+                    "reason": match.group(2).strip()
+                })
+        
+        if not top_categories:
+            raise ValueError(
+                "Could not parse categories from response. "
+                f"Response format was not as expected. Full response: {response_text[:500]}"
+            )
+        
+        return JsonResponse({
+            'status': 'success',
+            'message': 'Market analysis completed successfully',
+            'top_categories': top_categories,
+            'supplier_recommendations': supplier_recommendations[:3]  # Return top 3 recommendations
+        })
+    
     except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
+        return JsonResponse({
+            'status': 'error',
+            'error': str(e),
+            'message': 'Failed to analyze market trends',
+            'debug_info': {
+                'response_content': str(getattr(response, 'content', 'No content attribute'))[:500] if 'response' in locals() else 'No response'
+            }
+        }, status=500)

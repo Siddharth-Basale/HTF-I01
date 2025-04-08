@@ -4261,6 +4261,162 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'edit_inventory_item' not fou
 2025-04-08 01:20:49,747 - DEBUG - close.started
 2025-04-08 01:20:49,749 - DEBUG - close.complete
 2025-04-08 01:21:50,981 - WARNING - Not Found: /api/placeholder/300/300
+<<<<<<< HEAD
+2025-04-08 07:06:45,465 - WARNING - Forbidden (CSRF token from POST incorrect.): /supplier/login/
+2025-04-08 07:07:21,231 - ERROR - Internal Server Error: /manufacturer/quote-history/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\manufacturer\views.py", line 268, in quote_history
+    manufacturer = Manufacturer.objects.get(user=request.user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+manufacturer.models.Manufacturer.DoesNotExist: Manufacturer matching query does not exist.
+2025-04-08 07:07:24,783 - WARNING - Not Found: /manufacturer/
+2025-04-08 07:14:06,760 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:14:33,143 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:14:33,143 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:14:33,876 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:14:34,194 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000141BF747E60>
+2025-04-08 07:14:34,194 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000141C44FE9D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:14:34,744 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000141C13B5040>
+2025-04-08 07:14:34,744 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:14:34,744 - DEBUG - send_request_headers.complete
+2025-04-08 07:14:34,744 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:14:34,766 - DEBUG - send_request_body.complete
+2025-04-08 07:14:34,769 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:14:35,027 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:44:34 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:14:35,044 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:14:35,044 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:14:35,068 - DEBUG - receive_response_body.complete
+2025-04-08 07:14:35,072 - DEBUG - response_closed.started
+2025-04-08 07:14:35,080 - DEBUG - response_closed.complete
+2025-04-08 07:14:35,080 - DEBUG - close.started
+2025-04-08 07:14:35,080 - DEBUG - close.complete
+2025-04-08 07:14:35,085 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:14:55,566 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:22:57,886 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:23:19,214 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:23:19,221 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:23:20,765 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:23:21,142 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022610D7C4A0>
+2025-04-08 07:23:21,143 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000022610F88D50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:23:21,754 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022610D7C320>
+2025-04-08 07:23:21,758 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:23:21,758 - DEBUG - send_request_headers.complete
+2025-04-08 07:23:21,758 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:23:21,758 - DEBUG - send_request_body.complete
+2025-04-08 07:23:21,773 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:23:22,066 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:53:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:23:22,071 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:23:22,072 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:23:22,072 - DEBUG - receive_response_body.complete
+2025-04-08 07:23:22,075 - DEBUG - response_closed.started
+2025-04-08 07:23:22,081 - DEBUG - response_closed.complete
+2025-04-08 07:23:22,089 - DEBUG - close.started
+2025-04-08 07:23:22,091 - DEBUG - close.complete
+2025-04-08 07:23:22,095 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:23:38,641 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:23:38,654 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:23:40,068 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:23:40,391 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022610F7B770>
+2025-04-08 07:23:40,407 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000022610B02150> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:23:41,103 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022610F7BB60>
+2025-04-08 07:23:41,112 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:23:41,114 - DEBUG - send_request_headers.complete
+2025-04-08 07:23:41,116 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:23:41,118 - DEBUG - send_request_body.complete
+2025-04-08 07:23:41,122 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:23:41,417 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:53:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:23:41,421 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:23:41,435 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:23:41,443 - DEBUG - receive_response_body.complete
+2025-04-08 07:23:41,443 - DEBUG - response_closed.started
+2025-04-08 07:23:41,454 - DEBUG - response_closed.complete
+2025-04-08 07:23:41,454 - DEBUG - close.started
+2025-04-08 07:23:41,454 - DEBUG - close.complete
+2025-04-08 07:23:41,462 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:23:44,137 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:24:15,836 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:24:15,840 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:24:17,308 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:24:17,660 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020DB121F1A0>
+2025-04-08 07:24:17,664 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020DB11A4250> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:24:18,278 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020DB121F0B0>
+2025-04-08 07:24:18,278 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:24:18,280 - DEBUG - send_request_headers.complete
+2025-04-08 07:24:18,281 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:24:18,282 - DEBUG - send_request_body.complete
+2025-04-08 07:24:18,283 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:24:18,580 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:54:18 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:24:18,587 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:24:18,588 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:24:18,589 - DEBUG - receive_response_body.complete
+2025-04-08 07:24:18,590 - DEBUG - response_closed.started
+2025-04-08 07:24:18,590 - DEBUG - response_closed.complete
+2025-04-08 07:24:18,591 - DEBUG - close.started
+2025-04-08 07:24:18,593 - DEBUG - close.complete
+2025-04-08 07:24:18,596 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:25:25,560 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:25:25,569 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:25:27,102 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:25:27,493 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020DB0FAA0F0>
+2025-04-08 07:25:27,499 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020DB08B58D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:25:28,111 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020DB0FAB5C0>
+2025-04-08 07:25:28,112 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:25:28,119 - DEBUG - send_request_headers.complete
+2025-04-08 07:25:28,126 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:25:28,126 - DEBUG - send_request_body.complete
+2025-04-08 07:25:28,126 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:25:28,419 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:55:28 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:25:28,422 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:25:28,423 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:25:28,423 - DEBUG - receive_response_body.complete
+2025-04-08 07:25:28,423 - DEBUG - response_closed.started
+2025-04-08 07:25:28,423 - DEBUG - response_closed.complete
+2025-04-08 07:25:28,423 - DEBUG - close.started
+2025-04-08 07:25:28,423 - DEBUG - close.complete
+2025-04-08 07:25:28,430 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:27:07,832 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:27:27,844 - INFO - Initializing AI agent with database: sqlite:///db.sqlite3
+2025-04-08 07:27:27,899 - INFO - Sending prompt to AI agent
+2025-04-08 07:27:30,490 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:27:30,490 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:27:32,074 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:27:32,417 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F7420E1EE0>
+2025-04-08 07:27:32,424 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001F741F6B850> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:27:33,033 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F73FFC9190>
+2025-04-08 07:27:33,035 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:27:33,037 - DEBUG - send_request_headers.complete
+2025-04-08 07:27:33,040 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:27:33,043 - DEBUG - send_request_body.complete
+2025-04-08 07:27:33,043 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:27:33,339 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 01:57:32 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:27:33,340 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:27:33,340 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:27:33,344 - DEBUG - receive_response_body.complete
+2025-04-08 07:27:33,344 - DEBUG - response_closed.started
+2025-04-08 07:27:33,348 - DEBUG - response_closed.complete
+2025-04-08 07:27:33,348 - DEBUG - close.started
+2025-04-08 07:27:33,348 - DEBUG - close.complete
+2025-04-08 07:27:33,351 - INFO - Received AI response: content='```json\n{\n    "top_categories": [\n        {\n            "name": "category_name",\n            "request_count": 123,\n            "top_products": [\n                "product1",\n                "product2"\n            ],\n            "trend_analysis": "text description"\n        }\n    ],\n    "emerging_trends": [\n        "trend1",\n        "trend2"\n    ],\n    "recommendations": [\n        "recommendation1",\n        "recommendation2"\n    ]\n}\n```' content_type='str' event='RunResponse' messages=[Message(role='user', content='\n        Analyze the current market demand by examining the \'manufacturer_quoterequest\' table \n        where status=\'open\'. Provide insights in this exact JSON format:\n\n        {\n            "top_categories": [\n                {\n                    "name": "category_name",\n                    "request_count": 123,\n                    "top_products": ["product1", "product2"],\n                    "trend_analysis": "text description"\n                }\n            ],\n            "emerging_trends": ["trend1", "trend2"],\n            "recommendations": ["recommendation1", "recommendation2"]\n        }\n\n        Important:\n        - Only return valid JSON that can be parsed by Python\'s json.loads()\n        - Do not include any markdown or code formatting\n        - Ensure all strings are properly escaped\n        ', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077447), Message(role='model', content='```json\n{\n    "top_categories": [\n        {\n            "name": "category_name",\n            "request_count": 123,\n            "top_products": [\n                "product1",\n                "product2"\n            ],\n            "trend_analysis": "text description"\n        }\n    ],\n    "emerging_trends": [\n        "trend1",\n        "trend2"\n    ],\n    "recommendations": [\n        "recommendation1",\n        "recommendation2"\n    ]\n}\n```', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.5426202999660745, 'input_tokens': 234, 'output_tokens': 126, 'total_tokens': 360}, references=None, created_at=1744077450)] metrics=defaultdict(<class 'list'>, {}) model='gemini-2.0-flash-exp' run_id='4f30d5f6-0314-49e2-989c-ff7db5ec52ea' agent_id='4755b177-4eba-404f-9f17-2b18f59fd30f' session_id='74d8749b-56f0-448e-a98c-20fc2d92ea24' workflow_id=None tools=None images=None videos=None audio=None response_audio=None extra_data=None created_at=1744077433
+2025-04-08 07:27:33,375 - ERROR - Unexpected error in ai_suggestions
+Traceback (most recent call last):
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 663, in ai_suggestions
+    if response.startswith("```json"):
+       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'RunResponse' object has no attribute 'startswith'
+=======
 2025-04-08 08:30:31,569 - WARNING - Not Found: /favicon.ico
 2025-04-08 08:30:58,042 - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
 2025-04-08 08:30:58,042 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/HRC=F
@@ -4737,10 +4893,710 @@ Traceback (most recent call last):
     compile_func = self.tags[command]
                    ~~~~~~~~~^^^^^^^^^
 KeyError: 'else'
+>>>>>>> 4cfc38efd872835a7a2a836a23c313d3d321e2c1
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
+  File "C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py", line 677, in ai_suggestions
+    except json.JSONDecodeError as e:
+           ^^^^
+UnboundLocalError: cannot access local variable 'json' where it is not associated with a value
+2025-04-08 07:27:33,397 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 07:32:14,853 - INFO - Initializing AI agent with database: sqlite:///db.sqlite3
+2025-04-08 07:32:14,984 - INFO - Sending prompt to AI agent
+2025-04-08 07:32:17,815 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:32:17,815 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:32:19,529 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:32:19,840 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000185868689E0>
+2025-04-08 07:32:19,845 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018586ED6250> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:32:20,453 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001858686A030>
+2025-04-08 07:32:20,455 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:32:20,456 - DEBUG - send_request_headers.complete
+2025-04-08 07:32:20,457 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:32:20,458 - DEBUG - send_request_body.complete
+2025-04-08 07:32:20,459 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:32:20,760 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:02:20 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:32:20,764 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:32:20,765 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:32:20,766 - DEBUG - receive_response_body.complete
+2025-04-08 07:32:20,767 - DEBUG - response_closed.started
+2025-04-08 07:32:20,768 - DEBUG - response_closed.complete
+2025-04-08 07:32:20,769 - DEBUG - close.started
+2025-04-08 07:32:20,770 - DEBUG - close.complete
+2025-04-08 07:32:20,772 - INFO - Received AI response: content='```json\n{\n    "top_categories": [\n        {\n            "name": "Example Category",\n            "request_count": 50,\n            "top_products": ["Product A", "Product B"],\n            "trend_analysis": "Demand for this category is increasing."\n        }\n    ],\n    "emerging_trends": ["New Material X", "Eco-friendly alternatives"],\n    "recommendations": ["Increase production capacity", "Explore new markets"]\n}\n```' content_type='str' event='RunResponse' messages=[Message(role='user', content='\n        Analyze the current market demand by examining the \'manufacturer_quoterequest\' table \n        where status=\'open\'. Provide insights in this exact JSON format:\n\n        {\n            "top_categories": [\n                {\n                    "name": "category_name",\n                    "request_count": 123,\n                    "top_products": ["product1", "product2"],\n                    "trend_analysis": "text description"\n                }\n            ],\n            "emerging_trends": ["trend1", "trend2"],\n            "recommendations": ["recommendation1", "recommendation2"]\n        }\n\n        Important:\n        - Only return valid JSON that can be parsed by Python\'s json.loads()\n        - Do not include any markdown or code formatting\n        - Ensure all strings are properly escaped\n        ', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077735), Message(role='model', content='```json\n{\n    "top_categories": [\n        {\n            "name": "Example Category",\n            "request_count": 50,\n            "top_products": ["Product A", "Product B"],\n            "trend_analysis": "Demand for this category is increasing."\n        }\n    ],\n    "emerging_trends": ["New Material X", "Eco-friendly alternatives"],\n    "recommendations": ["Increase production capacity", "Explore new markets"]\n}\n```', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.733020099985879, 'input_tokens': 234, 'output_tokens': 109, 'total_tokens': 343}, references=None, created_at=1744077737)] metrics=defaultdict(<class 'list'>, {}) model='gemini-2.0-flash-exp' run_id='8ac26e8f-b539-4618-b931-5989301a6c73' agent_id='7ebcd123-3531-4eab-9c8e-67fbba5dd83c' session_id='e8dbf7f7-4fb9-4db2-9f2e-c1a0f17d8eed' workflow_id=None tools=None images=None videos=None audio=None response_audio=None extra_data=None created_at=1744077716
+2025-04-08 07:32:20,866 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view supplier.views.ai_suggestions didn't return an HttpResponse object. It returned None instead.
+2025-04-08 07:32:40,102 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:33:17,714 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 07:33:35,078 - INFO - Initializing AI agent with database: sqlite:///db.sqlite3
+2025-04-08 07:33:35,132 - INFO - Sending prompt to AI agent
+2025-04-08 07:33:41,585 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:33:41,604 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:33:43,332 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:33:43,805 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B11B4410>
+2025-04-08 07:33:43,805 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B3B10486D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:33:44,418 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B11B4320>
+2025-04-08 07:33:44,419 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:33:44,419 - DEBUG - send_request_headers.complete
+2025-04-08 07:33:44,419 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:33:44,419 - DEBUG - send_request_body.complete
+2025-04-08 07:33:44,419 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:33:44,716 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:03:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:33:44,730 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:33:44,731 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:33:44,732 - DEBUG - receive_response_body.complete
+2025-04-08 07:33:44,733 - DEBUG - response_closed.started
+2025-04-08 07:33:44,733 - DEBUG - response_closed.complete
+2025-04-08 07:33:44,736 - DEBUG - close.started
+2025-04-08 07:33:44,737 - DEBUG - close.complete
+2025-04-08 07:33:44,738 - INFO - Received AI response: content='**Top High-Demand Product Categories:**\n\n1.  Cotton\n    *   Reason: Highest average quantity requested (10000.0) and also has one request.\n    *   Top Products:\n        *   Cotton\n2.  Steel\n    *   Reason: Average quantity is 600 and has one request.\n    *   Top Products:\n        *   Steel\n3.  Rubber\n    *   Reason: Average quantity is 100 and has one request.\n    *   Top Products:\n        *   Rubber\n' content_type='str' event='RunResponse' messages=[Message(role='user', content="\n        Analyze the 'manufacturer_quoterequest' table to:\n1. Extract product details (name, category, specifications) and request patterns\n2. Identify high-demand products/categories based on:\n   - Frequency of requests\n   - Quantity requested (if available)\n   - Recent request trends\n3. Generate an ordered list (high to low demand) with:\n   - Top categories (with justification)\n   - Top products in each category\n4. Format output as:\n**Top High-Demand Product Categories:**\n1. [Category Name]\n   - Reason: [justification]\n   - Top Products:\n     - [Product 1]\n     - [Product 2]\n2. [Category Name]...\n", name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077815), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'describe_table', 'arguments': '{"table_name": "manufacturer_quoterequest"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 1.9815802000230178, 'input_tokens': 214, 'output_tokens': 11, 'total_tokens': 225}, references=None, created_at=1744077817), Message(role='tool', content=['["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077817, combined_function_details=[('describe_table', '["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]')]), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT category, COUNT(*) AS request_count FROM manufacturer_quoterequest GROUP BY category ORDER BY request_count DESC"}'}}, {'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT product, COUNT(*) AS request_count FROM manufacturer_quoterequest GROUP BY product ORDER BY request_count DESC"}'}}, {'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT category, AVG(quantity) AS avg_quantity FROM manufacturer_quoterequest GROUP BY category ORDER BY avg_quantity DESC"}'}}, {'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT product, AVG(quantity) AS avg_quantity FROM manufacturer_quoterequest GROUP BY product ORDER BY avg_quantity DESC"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.855966000002809, 'input_tokens': 624, 'output_tokens': 128, 'total_tokens': 752}, references=None, created_at=1744077820), Message(role='tool', content=['[{"category": "steel", "request_count": 1}, {"category": "rubber", "request_count": 1}, {"category": "cotton", "request_count": 1}]', '[{"product": "Steel", "request_count": 1}, {"product": "Rubber", "request_count": 1}, {"product": "Cotton", "request_count": 1}]', '[{"category": "cotton", "avg_quantity": 10000.0}, {"category": "steel", "avg_quantity": 600.0}, {"category": "rubber", "avg_quantity": 100.0}]', '[{"product": "Cotton", "avg_quantity": 10000.0}, {"product": "Steel", "avg_quantity": 600.0}, {"product": "Rubber", "avg_quantity": 100.0}]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077820, combined_function_details=[('run_sql_query', '[{"category": "steel", "request_count": 1}, {"category": "rubber", "request_count": 1}, {"category": "cotton", "request_count": 1}]'), ('run_sql_query', '[{"product": "Steel", "request_count": 1}, {"product": "Rubber", "request_count": 1}, {"product": "Cotton", "request_count": 1}]'), ('run_sql_query', '[{"category": "cotton", "avg_quantity": 10000.0}, {"category": "steel", "avg_quantity": 600.0}, {"category": "rubber", "avg_quantity": 100.0}]'), ('run_sql_query', '[{"product": "Cotton", "avg_quantity": 10000.0}, {"product": "Steel", "avg_quantity": 600.0}, {"product": "Rubber", "avg_quantity": 100.0}]')]), Message(role='model', content='**Top High-Demand Product Categories:**\n\n1.  Cotton\n    *   Reason: Highest average quantity requested (10000.0) and also has one request.\n    *   Top Products:\n        *   Cotton\n2.  Steel\n    *   Reason: Average quantity is 600 and has one request.\n    *   Top Products:\n        *   Steel\n3.  Rubber\n    *   Reason: Average quantity is 100 and has one request.\n    *   Top Products:\n        *   Rubber\n', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 1.5245731000322849, 'input_tokens': 952, 'output_tokens': 121, 'total_tokens': 1073}, references=None, created_at=1744077821)] metrics=defaultdict(<class 'list'>, {}) model='gemini-2.0-flash-exp' run_id='e8167ec3-6823-45c8-9619-e9488dd14019' agent_id='20457d42-ea03-4578-b35e-d694909ebbda' session_id='9f1ef377-96cd-4a88-88b9-eccd78fd3624' workflow_id=None tools=None images=None videos=None audio=None response_audio=None extra_data=None created_at=1744077802
+2025-04-08 07:33:44,838 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view supplier.views.ai_suggestions didn't return an HttpResponse object. It returned None instead.
+2025-04-08 07:33:48,439 - INFO - Initializing AI agent with database: sqlite:///db.sqlite3
+2025-04-08 07:33:48,450 - INFO - Sending prompt to AI agent
+2025-04-08 07:33:57,438 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 07:33:57,451 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 07:33:58,899 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 07:33:59,267 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B1039EB0>
+2025-04-08 07:33:59,269 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B3B0FFC0D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 07:33:59,881 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B1039910>
+2025-04-08 07:33:59,887 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 07:33:59,890 - DEBUG - send_request_headers.complete
+2025-04-08 07:33:59,896 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 07:33:59,905 - DEBUG - send_request_body.complete
+2025-04-08 07:33:59,905 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 07:34:00,188 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:03:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 07:34:00,189 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 07:34:00,197 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 07:34:00,202 - DEBUG - receive_response_body.complete
+2025-04-08 07:34:00,204 - DEBUG - response_closed.started
+2025-04-08 07:34:00,204 - DEBUG - response_closed.complete
+2025-04-08 07:34:00,213 - DEBUG - close.started
+2025-04-08 07:34:00,228 - DEBUG - close.complete
+2025-04-08 07:34:00,240 - INFO - Received AI response: content='**Top High-Demand Product Categories:**\n\n1.  Cotton\n    *   Reason: Highest total quantity requested (10000) and a request count of 1.\n    *   Top Products:\n        *   Cotton\n2.  Steel\n    *   Reason: A request count of 1 with a total quantity of 600 requested.\n    *   Top Products:\n        *   Steel\n3.  Rubber\n    *   Reason: A request count of 1 with a total quantity of 100 requested.\n    *   Top Products:\n        *   Rubber\n' content_type='str' event='RunResponse' messages=[Message(role='user', content="\n        Analyze the 'manufacturer_quoterequest' table to:\n1. Extract product details (name, category, specifications) and request patterns\n2. Identify high-demand products/categories based on:\n   - Frequency of requests\n   - Quantity requested (if available)\n   - Recent request trends\n3. Generate an ordered list (high to low demand) with:\n   - Top categories (with justification)\n   - Top products in each category\n4. Format output as:\n**Top High-Demand Product Categories:**\n1. [Category Name]\n   - Reason: [justification]\n   - Top Products:\n     - [Product 1]\n     - [Product 2]\n2. [Category Name]...\n", name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077828), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'describe_table', 'arguments': '{"table_name": "manufacturer_quoterequest"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.007635499991011, 'input_tokens': 214, 'output_tokens': 11, 'total_tokens': 225}, references=None, created_at=1744077830), Message(role='tool', content=['["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077830, combined_function_details=[('describe_table', '["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]')]), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT category, COUNT(*) AS request_count, SUM(quantity) AS total_quantity FROM manufacturer_quoterequest GROUP BY category ORDER BY request_count DESC, total_quantity DESC"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.180934600008186, 'input_tokens': 624, 'output_tokens': 45, 'total_tokens': 669}, references=None, created_at=1744077832), Message(role='tool', content=['[{"category": "cotton", "request_count": 1, "total_quantity": 10000}, {"category": "steel", "request_count": 1, "total_quantity": 600}, {"category": "rubber", "request_count": 1, "total_quantity": 100}]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077832, combined_function_details=[('run_sql_query', '[{"category": "cotton", "request_count": 1, "total_quantity": 10000}, {"category": "steel", "request_count": 1, "total_quantity": 600}, {"category": "rubber", "request_count": 1, "total_quantity": 100}]')]), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT product, category, COUNT(*) AS request_count, SUM(quantity) AS total_quantity FROM manufacturer_quoterequest GROUP BY product, category ORDER BY request_count DESC, total_quantity DESC"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.200759100029245, 'input_tokens': 744, 'output_tokens': 49, 'total_tokens': 793}, references=None, created_at=1744077834), Message(role='tool', content=['[{"product": "Cotton", "category": "cotton", "request_count": 1, "total_quantity": 10000}, {"product": "Steel", "category": "steel", "request_count": 1, "total_quantity": 600}, {"product": "Rubber", "category": "rubber", "request_count": 1, "total_quantity": 100}]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744077834, combined_function_details=[('run_sql_query', '[{"product": "Cotton", "category": "cotton", "request_count": 1, "total_quantity": 10000}, {"product": "Steel", "category": "steel", "request_count": 1, "total_quantity": 600}, {"product": "Rubber", "category": "rubber", "request_count": 1, "total_quantity": 100}]')]), Message(role='model', content='**Top High-Demand Product Categories:**\n\n1.  Cotton\n    *   Reason: Highest total quantity requested (10000) and a request count of 1.\n    *   Top Products:\n        *   Cotton\n2.  Steel\n    *   Reason: A request count of 1 with a total quantity of 600 requested.\n    *   Top Products:\n        *   Steel\n3.  Rubber\n    *   Reason: A request count of 1 with a total quantity of 100 requested.\n    *   Top Products:\n        *   Rubber\n', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.557594700017944, 'input_tokens': 886, 'output_tokens': 131, 'total_tokens': 1017}, references=None, created_at=1744077837)] metrics=defaultdict(<class 'list'>, {}) model='gemini-2.0-flash-exp' run_id='78c37593-dd0e-489d-9ae4-000ddd63ba66' agent_id='0ff21d44-1bc7-4c70-a656-45554141c7f5' session_id='9aa385ba-ed15-4384-a82b-30ea3b78165f' workflow_id=None tools=None images=None videos=None audio=None response_audio=None extra_data=None created_at=1744077802
+2025-04-08 07:34:00,419 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view supplier.views.ai_suggestions didn't return an HttpResponse object. It returned None instead.
+2025-04-08 08:09:36,977 - INFO - Initializing AI agent with database: sqlite:///db.sqlite3
+2025-04-08 08:09:36,979 - INFO - Sending prompt to AI agent
+2025-04-08 08:09:46,697 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:09:46,710 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:09:48,271 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:09:48,606 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B11963C0>
+2025-04-08 08:09:48,607 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B3B0806CD0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:09:49,244 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B3B139C140>
+2025-04-08 08:09:49,244 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:09:49,254 - DEBUG - send_request_headers.complete
+2025-04-08 08:09:49,263 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:09:49,270 - DEBUG - send_request_body.complete
+2025-04-08 08:09:49,278 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:09:49,528 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:39:49 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:09:49,530 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:09:49,530 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:09:49,530 - DEBUG - receive_response_body.complete
+2025-04-08 08:09:49,530 - DEBUG - response_closed.started
+2025-04-08 08:09:49,530 - DEBUG - response_closed.complete
+2025-04-08 08:09:49,537 - DEBUG - close.started
+2025-04-08 08:09:49,539 - DEBUG - close.complete
+2025-04-08 08:09:49,540 - INFO - Received AI response: content='**Top High-Demand Product Categories:**\n\n1.  Steel\n    *   Reason: Based on the available data, steel has the highest number of requests.\n    *   Top Products:\n        *   Steel\n2.  Rubber\n    *   Reason: Based on the available data, rubber has the same number of requests as steel.\n    *   Top Products:\n        *   Rubber\n3.  Cotton\n    *   Reason: Based on the available data, cotton has the same number of requests as steel and rubber.\n    *   Top Products:\n        *   Cotton\n' content_type='str' event='RunResponse' messages=[Message(role='user', content="\n        Analyze the 'manufacturer_quoterequest' table to:\n1. Extract product details (name, category, specifications) and request patterns\n2. Identify high-demand products/categories based on:\n   - Frequency of requests\n   - Quantity requested (if available)\n   - Recent request trends\n3. Generate an ordered list (high to low demand) with:\n   - Top categories (with justification)\n   - Top products in each category\n4. Format output as:\n**Top High-Demand Product Categories:**\n1. [Category Name]\n   - Reason: [justification]\n   - Top Products:\n     - [Product 1]\n     - [Product 2]\n2. [Category Name]...\n", name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744079976), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'describe_table', 'arguments': '{"table_name": "manufacturer_quoterequest"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.3328749000211246, 'input_tokens': 214, 'output_tokens': 11, 'total_tokens': 225}, references=None, created_at=1744079979), Message(role='tool', content=['["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744079979, combined_function_details=[('describe_table', '["{\'name\': \'id\', \'type\': INTEGER(), \'nullable\': False, \'default\': None, \'primary_key\': 1}", "{\'name\': \'product\', \'type\': VARCHAR(length=200), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'category\', \'type\': VARCHAR(length=100), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'description\', \'type\': TEXT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'deadline\', \'type\': DATE(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'quantity\', \'type\': DECIMAL(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'unit\', \'type\': VARCHAR(length=20), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'currency\', \'type\': VARCHAR(length=3), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'created_at\', \'type\': DATETIME(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'manufacturer_id\', \'type\': BIGINT(), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'status\', \'type\': VARCHAR(length=10), \'nullable\': False, \'default\': None, \'primary_key\': 0}", "{\'name\': \'accepted_bid_id\', \'type\': BIGINT(), \'nullable\': True, \'default\': None, \'primary_key\': 0}"]')]), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT category, COUNT(*) AS request_count FROM manufacturer_quoterequest GROUP BY category ORDER BY request_count DESC"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.6449637999758124, 'input_tokens': 624, 'output_tokens': 31, 'total_tokens': 655}, references=None, created_at=1744079981), Message(role='tool', content=['[{"category": "steel", "request_count": 1}, {"category": "rubber", "request_count": 1}, {"category": "cotton", "request_count": 1}]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744079981, combined_function_details=[('run_sql_query', '[{"category": "steel", "request_count": 1}, {"category": "rubber", "request_count": 1}, {"category": "cotton", "request_count": 1}]')]), Message(role='model', content='', name=None, tool_call_id=None, tool_calls=[{'type': 'function', 'function': {'name': 'run_sql_query', 'arguments': '{"limit": 5.0, "query": "SELECT product, COUNT(*) AS request_count FROM manufacturer_quoterequest GROUP BY product ORDER BY request_count DESC"}'}}], audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.1459086999529973, 'input_tokens': 698, 'output_tokens': 31, 'total_tokens': 729}, references=None, created_at=1744079984), Message(role='tool', content=['[{"product": "Steel", "request_count": 1}, {"product": "Rubber", "request_count": 1}, {"product": "Cotton", "request_count": 1}]'], name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={}, references=None, created_at=1744079984, combined_function_details=[('run_sql_query', '[{"product": "Steel", "request_count": 1}, {"product": "Rubber", "request_count": 1}, {"product": "Cotton", "request_count": 1}]')]), Message(role='model', content='**Top High-Demand Product Categories:**\n\n1.  Steel\n    *   Reason: Based on the available data, steel has the highest number of requests.\n    *   Top Products:\n        *   Steel\n2.  Rubber\n    *   Reason: Based on the available data, rubber has the same number of requests as steel.\n    *   Top Products:\n        *   Rubber\n3.  Cotton\n    *   Reason: Based on the available data, cotton has the same number of requests as steel and rubber.\n    *   Top Products:\n        *   Cotton\n', name=None, tool_call_id=None, tool_calls=None, audio=None, images=None, videos=None, tool_name=None, tool_args=None, tool_call_error=None, stop_after_tool_call=False, metrics={'time': 2.5570642999955453, 'input_tokens': 772, 'output_tokens': 126, 'total_tokens': 898}, references=None, created_at=1744079986)] metrics=defaultdict(<class 'list'>, {}) model='gemini-2.0-flash-exp' run_id='f5d07d00-4030-46a6-8ab1-4eb7d2e6aac0' agent_id='56f011cd-2b2f-4dca-8cd0-51575b0d6008' session_id='0ac76a3d-373d-4a92-8e5a-a51d2307a2c6' workflow_id=None tools=None images=None videos=None audio=None response_audio=None extra_data=None created_at=1744077802
+2025-04-08 08:09:49,638 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+Traceback (most recent call last):
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\IQRA\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view supplier.views.ai_suggestions didn't return an HttpResponse object. It returned None instead.
+2025-04-08 08:15:05,834 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:15:38,105 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:15:38,142 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:15:39,619 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:15:39,980 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000214001B51C0>
+2025-04-08 08:15:39,986 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002147D39B350> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:15:40,482 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000214001B6210>
+2025-04-08 08:15:40,484 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:15:40,486 - DEBUG - send_request_headers.complete
+2025-04-08 08:15:40,486 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:15:40,486 - DEBUG - send_request_body.complete
+2025-04-08 08:15:40,490 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:15:40,786 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:45:40 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:15:40,787 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:15:40,787 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:15:40,787 - DEBUG - receive_response_body.complete
+2025-04-08 08:15:40,787 - DEBUG - response_closed.started
+2025-04-08 08:15:40,787 - DEBUG - response_closed.complete
+2025-04-08 08:15:40,794 - DEBUG - close.started
+2025-04-08 08:15:40,797 - DEBUG - close.complete
+2025-04-08 08:15:40,799 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:16:46,732 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:16:46,736 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:16:47,805 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:16:48,144 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000214007490D0>
+2025-04-08 08:16:48,146 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002140018F250> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:16:48,780 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021400749DC0>
+2025-04-08 08:16:48,783 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:16:48,791 - DEBUG - send_request_headers.complete
+2025-04-08 08:16:48,799 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:16:48,815 - DEBUG - send_request_body.complete
+2025-04-08 08:16:48,817 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:16:49,101 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:46:48 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:16:49,118 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:16:49,131 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:16:49,135 - DEBUG - receive_response_body.complete
+2025-04-08 08:16:49,147 - DEBUG - response_closed.started
+2025-04-08 08:16:49,149 - DEBUG - response_closed.complete
+2025-04-08 08:16:49,150 - DEBUG - close.started
+2025-04-08 08:16:49,156 - DEBUG - close.complete
+2025-04-08 08:16:49,156 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:19:55,789 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:20:30,111 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:20:30,126 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:20:31,998 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:20:32,422 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020CBE9D3980>
+2025-04-08 08:20:32,423 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000020CBE8B51D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:20:33,037 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020CBE4865D0>
+2025-04-08 08:20:33,040 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:20:33,041 - DEBUG - send_request_headers.complete
+2025-04-08 08:20:33,042 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:20:33,043 - DEBUG - send_request_body.complete
+2025-04-08 08:20:33,045 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:20:33,341 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:50:33 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:20:33,341 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:20:33,341 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:20:33,341 - DEBUG - receive_response_body.complete
+2025-04-08 08:20:33,349 - DEBUG - response_closed.started
+2025-04-08 08:20:33,349 - DEBUG - response_closed.complete
+2025-04-08 08:20:33,349 - DEBUG - close.started
+2025-04-08 08:20:33,356 - DEBUG - close.complete
+2025-04-08 08:23:10,049 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:23:44,466 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:23:44,476 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:23:46,189 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:23:46,583 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000126204411C0>
+2025-04-08 08:23:46,584 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000012620308A50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:23:47,189 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000126204410D0>
+2025-04-08 08:23:47,189 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:23:47,189 - DEBUG - send_request_headers.complete
+2025-04-08 08:23:47,189 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:23:47,197 - DEBUG - send_request_body.complete
+2025-04-08 08:23:47,199 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:23:47,489 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:53:47 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:23:47,498 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:23:47,498 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:23:47,498 - DEBUG - receive_response_body.complete
+2025-04-08 08:23:47,498 - DEBUG - response_closed.started
+2025-04-08 08:23:47,504 - DEBUG - response_closed.complete
+2025-04-08 08:23:47,506 - DEBUG - close.started
+2025-04-08 08:23:47,506 - DEBUG - close.complete
+2025-04-08 08:23:47,506 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:24:02,297 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:24:30,712 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:24:30,727 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:24:32,376 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:24:32,656 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000188621A7500>
+2025-04-08 08:24:32,658 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000018862065050> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:24:33,272 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000188621A7410>
+2025-04-08 08:24:33,275 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:24:33,276 - DEBUG - send_request_headers.complete
+2025-04-08 08:24:33,278 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:24:33,279 - DEBUG - send_request_body.complete
+2025-04-08 08:24:33,279 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:24:33,577 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:54:33 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:24:33,578 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:24:33,578 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:24:33,578 - DEBUG - receive_response_body.complete
+2025-04-08 08:24:33,578 - DEBUG - response_closed.started
+2025-04-08 08:24:33,578 - DEBUG - response_closed.complete
+2025-04-08 08:24:33,578 - DEBUG - close.started
+2025-04-08 08:24:33,586 - DEBUG - close.complete
+2025-04-08 08:24:33,590 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:25:49,038 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:26:20,401 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:26:20,401 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:26:21,644 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:26:21,983 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026FDEA2E7E0>
+2025-04-08 08:26:21,984 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000026FDEA11350> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:26:22,518 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026FDEA2E720>
+2025-04-08 08:26:22,526 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:26:22,526 - DEBUG - send_request_headers.complete
+2025-04-08 08:26:22,526 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:26:22,526 - DEBUG - send_request_body.complete
+2025-04-08 08:26:22,530 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:26:22,835 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:56:22 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:26:22,835 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:26:22,835 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:26:22,843 - DEBUG - receive_response_body.complete
+2025-04-08 08:26:22,843 - DEBUG - response_closed.started
+2025-04-08 08:26:22,846 - DEBUG - response_closed.complete
+2025-04-08 08:26:22,846 - DEBUG - close.started
+2025-04-08 08:26:22,851 - DEBUG - close.complete
+2025-04-08 08:26:22,852 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:28:00,597 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:28:29,481 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:28:29,483 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:28:31,262 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:28:31,621 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001BEBDD82B10>
+2025-04-08 08:28:31,622 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001BEBDD88450> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:28:32,170 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001BEBDD81D90>
+2025-04-08 08:28:32,170 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:28:32,170 - DEBUG - send_request_headers.complete
+2025-04-08 08:28:32,176 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:28:32,177 - DEBUG - send_request_body.complete
+2025-04-08 08:28:32,179 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:28:32,477 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 02:58:32 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:28:32,478 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:28:32,478 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:28:32,478 - DEBUG - receive_response_body.complete
+2025-04-08 08:28:32,478 - DEBUG - response_closed.started
+2025-04-08 08:28:32,478 - DEBUG - response_closed.complete
+2025-04-08 08:28:32,478 - DEBUG - close.started
+2025-04-08 08:28:32,478 - DEBUG - close.complete
+2025-04-08 08:29:47,885 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:30:24,890 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:30:24,908 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:30:26,487 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:30:26,812 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000147F2333770>
+2025-04-08 08:30:26,812 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000147F2345E50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:30:27,472 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000147F2333EC0>
+2025-04-08 08:30:27,472 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:30:27,472 - DEBUG - send_request_headers.complete
+2025-04-08 08:30:27,472 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:30:27,472 - DEBUG - send_request_body.complete
+2025-04-08 08:30:27,472 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:30:27,782 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:00:27 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:30:27,785 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:30:27,786 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:30:27,787 - DEBUG - receive_response_body.complete
+2025-04-08 08:30:27,787 - DEBUG - response_closed.started
+2025-04-08 08:30:27,787 - DEBUG - response_closed.complete
+2025-04-08 08:30:27,787 - DEBUG - close.started
+2025-04-08 08:30:27,787 - DEBUG - close.complete
+2025-04-08 08:31:12,564 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:31:34,409 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:32:00,326 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:32:24,566 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:32:24,567 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:32:26,273 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:32:26,662 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ED4EE6F800>
+2025-04-08 08:32:26,663 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001ED4ED48950> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:32:27,280 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ED4EE6F740>
+2025-04-08 08:32:27,280 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:32:27,280 - DEBUG - send_request_headers.complete
+2025-04-08 08:32:27,286 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:32:27,287 - DEBUG - send_request_body.complete
+2025-04-08 08:32:27,287 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:32:27,589 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:02:27 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:32:27,589 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:32:27,589 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:32:27,589 - DEBUG - receive_response_body.complete
+2025-04-08 08:32:27,597 - DEBUG - response_closed.started
+2025-04-08 08:32:27,597 - DEBUG - response_closed.complete
+2025-04-08 08:32:27,597 - DEBUG - close.started
+2025-04-08 08:32:27,597 - DEBUG - close.complete
+2025-04-08 08:33:42,210 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:34:18,814 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:34:18,814 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:34:20,282 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:34:20,639 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017DDA94DD60>
+2025-04-08 08:34:20,639 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000017DD7600250> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:34:21,243 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017DDA94CB90>
+2025-04-08 08:34:21,244 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:34:21,244 - DEBUG - send_request_headers.complete
+2025-04-08 08:34:21,244 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:34:21,244 - DEBUG - send_request_body.complete
+2025-04-08 08:34:21,244 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:34:21,564 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:04:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:34:21,564 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:34:21,564 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:34:21,571 - DEBUG - receive_response_body.complete
+2025-04-08 08:34:21,572 - DEBUG - response_closed.started
+2025-04-08 08:34:21,572 - DEBUG - response_closed.complete
+2025-04-08 08:34:21,572 - DEBUG - close.started
+2025-04-08 08:34:21,572 - DEBUG - close.complete
+2025-04-08 08:34:21,572 - ERROR - Internal Server Error: /supplier/ai-suggestions/
+2025-04-08 08:34:56,162 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:37:25,129 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:38:59,377 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:39:27,697 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:40:04,245 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:40:04,281 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:40:05,742 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:40:06,234 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000230E8F24BC0>
+2025-04-08 08:40:06,242 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000230E8C699D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:40:06,853 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000230E8F24470>
+2025-04-08 08:40:06,853 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:40:06,853 - DEBUG - send_request_headers.complete
+2025-04-08 08:40:06,861 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:40:06,862 - DEBUG - send_request_body.complete
+2025-04-08 08:40:06,863 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:40:07,093 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:10:06 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:40:07,095 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:40:07,099 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:40:07,100 - DEBUG - receive_response_body.complete
+2025-04-08 08:40:07,100 - DEBUG - response_closed.started
+2025-04-08 08:40:07,100 - DEBUG - response_closed.complete
+2025-04-08 08:40:07,100 - DEBUG - close.started
+2025-04-08 08:40:07,108 - DEBUG - close.complete
+2025-04-08 08:40:51,133 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:41:24,362 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:41:24,375 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:41:25,501 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:41:25,911 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E27F24A360>
+2025-04-08 08:41:25,918 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E27F3D02D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:41:26,492 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E27F2480B0>
+2025-04-08 08:41:26,496 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:41:26,498 - DEBUG - send_request_headers.complete
+2025-04-08 08:41:26,499 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:41:26,503 - DEBUG - send_request_body.complete
+2025-04-08 08:41:26,504 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:41:26,831 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:11:26 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:41:26,833 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:41:26,834 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:41:26,836 - DEBUG - receive_response_body.complete
+2025-04-08 08:41:26,839 - DEBUG - response_closed.started
+2025-04-08 08:41:26,840 - DEBUG - response_closed.complete
+2025-04-08 08:41:26,842 - DEBUG - close.started
+2025-04-08 08:41:26,843 - DEBUG - close.complete
+2025-04-08 08:42:13,560 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:42:40,166 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:43:14,893 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:43:14,901 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:43:16,250 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:43:16,606 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002424D3C9490>
+2025-04-08 08:43:16,607 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002424D3E4050> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:43:17,068 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002424D3C98E0>
+2025-04-08 08:43:17,069 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:43:17,069 - DEBUG - send_request_headers.complete
+2025-04-08 08:43:17,069 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:43:17,069 - DEBUG - send_request_body.complete
+2025-04-08 08:43:17,069 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:43:17,316 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:13:17 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:43:17,316 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:43:17,324 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:43:17,324 - DEBUG - receive_response_body.complete
+2025-04-08 08:43:17,326 - DEBUG - response_closed.started
+2025-04-08 08:43:17,326 - DEBUG - response_closed.complete
+2025-04-08 08:43:17,326 - DEBUG - close.started
+2025-04-08 08:43:17,333 - DEBUG - close.complete
+2025-04-08 08:44:23,169 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:44:51,505 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:45:26,292 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:45:52,730 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:45:52,731 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:45:54,680 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:45:55,120 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000234D5B072F0>
+2025-04-08 08:45:55,122 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000234D59C5350> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:45:55,730 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000234D5B07200>
+2025-04-08 08:45:55,730 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:45:55,738 - DEBUG - send_request_headers.complete
+2025-04-08 08:45:55,738 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:45:55,738 - DEBUG - send_request_body.complete
+2025-04-08 08:45:55,741 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:45:56,043 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:15:55 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:45:56,044 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:45:56,044 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:45:56,044 - DEBUG - receive_response_body.complete
+2025-04-08 08:45:56,044 - DEBUG - response_closed.started
+2025-04-08 08:45:56,044 - DEBUG - response_closed.complete
+2025-04-08 08:45:56,044 - DEBUG - close.started
+2025-04-08 08:45:56,044 - DEBUG - close.complete
+2025-04-08 08:46:22,754 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:47:01,127 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:47:01,137 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:47:02,976 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:47:03,318 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000024BCD5858B0>
+2025-04-08 08:47:03,322 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000024BCD829450> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:47:03,899 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000024BCD585700>
+2025-04-08 08:47:03,901 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:47:03,902 - DEBUG - send_request_headers.complete
+2025-04-08 08:47:03,902 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:47:03,902 - DEBUG - send_request_body.complete
+2025-04-08 08:47:03,902 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:47:04,243 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:17:03 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:47:04,244 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:47:04,244 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:47:04,250 - DEBUG - receive_response_body.complete
+2025-04-08 08:47:04,251 - DEBUG - response_closed.started
+2025-04-08 08:47:04,251 - DEBUG - response_closed.complete
+2025-04-08 08:47:04,251 - DEBUG - close.started
+2025-04-08 08:47:04,251 - DEBUG - close.complete
+2025-04-08 08:54:50,824 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:55:24,813 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:55:24,829 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:55:26,885 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:55:27,542 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001612784BE60>
+2025-04-08 08:55:27,544 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000161279E20D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:55:28,076 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016127848830>
+2025-04-08 08:55:28,076 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:55:28,084 - DEBUG - send_request_headers.complete
+2025-04-08 08:55:28,086 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:55:28,087 - DEBUG - send_request_body.complete
+2025-04-08 08:55:28,092 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:55:28,359 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:25:28 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:55:28,360 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:55:28,360 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:55:28,360 - DEBUG - receive_response_body.complete
+2025-04-08 08:55:28,360 - DEBUG - response_closed.started
+2025-04-08 08:55:28,360 - DEBUG - response_closed.complete
+2025-04-08 08:55:28,360 - DEBUG - close.started
+2025-04-08 08:55:28,373 - DEBUG - close.complete
+2025-04-08 08:56:05,059 - INFO - C:\Users\IQRA\Desktop\HackToFuture\I01\supplier\views.py changed, reloading.
+2025-04-08 08:56:31,973 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 08:56:31,982 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 08:56:33,450 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 08:56:33,801 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9545C0>
+2025-04-08 08:56:33,802 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA94CF50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 08:56:34,412 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9546E0>
+2025-04-08 08:56:34,414 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 08:56:34,414 - DEBUG - send_request_headers.complete
+2025-04-08 08:56:34,414 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 08:56:34,414 - DEBUG - send_request_body.complete
+2025-04-08 08:56:34,419 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 08:56:34,714 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:26:34 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 08:56:34,714 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 08:56:34,714 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 08:56:34,722 - DEBUG - receive_response_body.complete
+2025-04-08 08:56:34,722 - DEBUG - response_closed.started
+2025-04-08 08:56:34,722 - DEBUG - response_closed.complete
+2025-04-08 08:56:34,722 - DEBUG - close.started
+2025-04-08 08:56:34,730 - DEBUG - close.complete
+2025-04-08 09:00:29,741 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:00:29,743 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:00:31,099 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:00:31,478 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EAAA6720>
+2025-04-08 09:00:31,484 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA72C050> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:00:31,980 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA6D9D60>
+2025-04-08 09:00:31,984 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:00:31,987 - DEBUG - send_request_headers.complete
+2025-04-08 09:00:31,987 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:00:31,987 - DEBUG - send_request_body.complete
+2025-04-08 09:00:32,013 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:00:32,289 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:30:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:00:32,289 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:00:32,297 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:00:32,303 - DEBUG - receive_response_body.complete
+2025-04-08 09:00:32,303 - DEBUG - response_closed.started
+2025-04-08 09:00:32,303 - DEBUG - response_closed.complete
+2025-04-08 09:00:32,322 - DEBUG - close.started
+2025-04-08 09:00:32,331 - DEBUG - close.complete
+2025-04-08 09:02:38,942 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:02:38,946 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:02:39,968 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:02:40,385 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D37D0>
+2025-04-08 09:02:40,394 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA9268D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:02:41,004 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EAC9F080>
+2025-04-08 09:02:41,005 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:02:41,012 - DEBUG - send_request_headers.complete
+2025-04-08 09:02:41,015 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:02:41,017 - DEBUG - send_request_body.complete
+2025-04-08 09:02:41,019 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:02:41,312 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:32:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:02:41,316 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:02:41,319 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:02:41,322 - DEBUG - receive_response_body.complete
+2025-04-08 09:02:41,327 - DEBUG - response_closed.started
+2025-04-08 09:02:41,331 - DEBUG - response_closed.complete
+2025-04-08 09:02:41,333 - DEBUG - close.started
+2025-04-08 09:02:41,336 - DEBUG - close.complete
+2025-04-08 09:13:33,149 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:13:33,157 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:13:34,681 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:13:35,042 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D09B0>
+2025-04-08 09:13:35,048 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA8FE450> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:13:35,587 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D1070>
+2025-04-08 09:13:35,600 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:13:35,601 - DEBUG - send_request_headers.complete
+2025-04-08 09:13:35,601 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:13:35,612 - DEBUG - send_request_body.complete
+2025-04-08 09:13:35,617 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:13:35,868 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:43:35 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:13:35,869 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:13:35,869 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:13:35,885 - DEBUG - receive_response_body.complete
+2025-04-08 09:13:35,887 - DEBUG - response_closed.started
+2025-04-08 09:13:35,906 - DEBUG - response_closed.complete
+2025-04-08 09:13:35,920 - DEBUG - close.started
+2025-04-08 09:13:35,933 - DEBUG - close.complete
+2025-04-08 09:16:56,164 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:16:56,172 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:16:57,720 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:16:58,214 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D21E0>
+2025-04-08 09:16:58,216 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA924DD0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:16:59,022 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D1A00>
+2025-04-08 09:16:59,023 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:16:59,030 - DEBUG - send_request_headers.complete
+2025-04-08 09:16:59,030 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:16:59,039 - DEBUG - send_request_body.complete
+2025-04-08 09:16:59,040 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:16:59,430 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:46:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:16:59,430 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:16:59,430 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:16:59,439 - DEBUG - receive_response_body.complete
+2025-04-08 09:16:59,439 - DEBUG - response_closed.started
+2025-04-08 09:16:59,448 - DEBUG - response_closed.complete
+2025-04-08 09:16:59,448 - DEBUG - close.started
+2025-04-08 09:16:59,448 - DEBUG - close.complete
+2025-04-08 09:17:15,518 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:17:15,522 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:17:16,785 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:17:17,144 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA6D9D30>
+2025-04-08 09:17:17,158 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA9261D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:17:17,860 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA6DA540>
+2025-04-08 09:17:17,862 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:17:17,863 - DEBUG - send_request_headers.complete
+2025-04-08 09:17:17,864 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:17:17,865 - DEBUG - send_request_body.complete
+2025-04-08 09:17:17,866 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:17:18,171 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:47:17 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:17:18,178 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:17:18,181 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:17:18,191 - DEBUG - receive_response_body.complete
+2025-04-08 09:17:18,195 - DEBUG - response_closed.started
+2025-04-08 09:17:18,199 - DEBUG - response_closed.complete
+2025-04-08 09:17:18,207 - DEBUG - close.started
+2025-04-08 09:17:18,212 - DEBUG - close.complete
+2025-04-08 09:20:21,065 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:20:21,080 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:20:22,512 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:20:23,003 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D1EB0>
+2025-04-08 09:20:23,003 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1E90A2D50> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:20:23,616 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA928CB0>
+2025-04-08 09:20:23,617 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:20:23,617 - DEBUG - send_request_headers.complete
+2025-04-08 09:20:23,617 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:20:23,633 - DEBUG - send_request_body.complete
+2025-04-08 09:20:23,633 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:20:24,029 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:50:23 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:20:24,033 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:20:24,033 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:20:24,033 - DEBUG - receive_response_body.complete
+2025-04-08 09:20:24,054 - DEBUG - response_closed.started
+2025-04-08 09:20:24,096 - DEBUG - response_closed.complete
+2025-04-08 09:20:24,106 - DEBUG - close.started
+2025-04-08 09:20:24,126 - DEBUG - close.complete
+2025-04-08 09:23:26,079 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:23:26,083 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:23:27,568 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:23:28,070 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA6DA1B0>
+2025-04-08 09:23:28,070 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EAC4A650> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:23:28,928 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA786E10>
+2025-04-08 09:23:28,941 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:23:28,953 - DEBUG - send_request_headers.complete
+2025-04-08 09:23:28,955 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:23:28,965 - DEBUG - send_request_body.complete
+2025-04-08 09:23:28,965 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:23:29,304 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:53:28 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:23:29,312 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:23:29,318 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:23:29,318 - DEBUG - receive_response_body.complete
+2025-04-08 09:23:29,398 - DEBUG - response_closed.started
+2025-04-08 09:23:29,408 - DEBUG - response_closed.complete
+2025-04-08 09:23:29,421 - DEBUG - close.started
+2025-04-08 09:23:29,449 - DEBUG - close.complete
+2025-04-08 09:26:07,190 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:26:07,210 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:26:08,725 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:26:09,051 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EAC9FAA0>
+2025-04-08 09:26:09,056 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA8FD9D0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:26:09,728 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EAAA5F40>
+2025-04-08 09:26:09,728 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:26:09,739 - DEBUG - send_request_headers.complete
+2025-04-08 09:26:09,745 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:26:09,745 - DEBUG - send_request_body.complete
+2025-04-08 09:26:09,761 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:26:10,042 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:56:09 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:26:10,042 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:26:10,050 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:26:10,059 - DEBUG - receive_response_body.complete
+2025-04-08 09:26:10,059 - DEBUG - response_closed.started
+2025-04-08 09:26:10,059 - DEBUG - response_closed.complete
+2025-04-08 09:26:10,080 - DEBUG - close.started
+2025-04-08 09:26:10,080 - DEBUG - close.complete
+2025-04-08 09:27:21,629 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:27:21,631 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:27:23,337 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:27:24,000 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA870CE0>
+2025-04-08 09:27:24,004 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA9AC550> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:27:24,700 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA784770>
+2025-04-08 09:27:24,700 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:27:24,700 - DEBUG - send_request_headers.complete
+2025-04-08 09:27:24,700 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:27:24,700 - DEBUG - send_request_body.complete
+2025-04-08 09:27:24,700 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:27:24,999 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:57:24 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:27:25,007 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:27:25,011 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:27:25,016 - DEBUG - receive_response_body.complete
+2025-04-08 09:27:25,017 - DEBUG - response_closed.started
+2025-04-08 09:27:25,017 - DEBUG - response_closed.complete
+2025-04-08 09:27:25,027 - DEBUG - close.started
+2025-04-08 09:27:25,056 - DEBUG - close.complete
+2025-04-08 09:28:56,438 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:28:56,438 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:28:57,777 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:28:58,388 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1E5F21160>
+2025-04-08 09:28:58,395 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA9AD450> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:28:59,242 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EAC9E300>
+2025-04-08 09:28:59,341 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:28:59,344 - DEBUG - send_request_headers.complete
+2025-04-08 09:28:59,344 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:28:59,344 - DEBUG - send_request_body.complete
+2025-04-08 09:28:59,356 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:28:59,714 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 03:58:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:28:59,718 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:28:59,719 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:28:59,719 - DEBUG - receive_response_body.complete
+2025-04-08 09:28:59,719 - DEBUG - response_closed.started
+2025-04-08 09:28:59,719 - DEBUG - response_closed.complete
+2025-04-08 09:28:59,719 - DEBUG - close.started
+2025-04-08 09:28:59,719 - DEBUG - close.complete
+2025-04-08 09:35:14,921 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-04-08 09:35:14,929 - DEBUG - load_verify_locations cafile='C:\\Users\\IQRA\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+2025-04-08 09:35:16,535 - DEBUG - connect_tcp.started host='api.phidata.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-08 09:35:17,073 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA9D0140>
+2025-04-08 09:35:17,074 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B1EA1A2BD0> server_hostname='api.phidata.com' timeout=60
+2025-04-08 09:35:17,887 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B1EA954BC0>
+2025-04-08 09:35:17,891 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-08 09:35:17,894 - DEBUG - send_request_headers.complete
+2025-04-08 09:35:17,906 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-08 09:35:17,906 - DEBUG - send_request_body.complete
+2025-04-08 09:35:17,924 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-08 09:35:18,287 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 08 Apr 2025 04:05:17 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-08 09:35:18,303 - INFO - HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-08 09:35:18,305 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-08 09:35:18,305 - DEBUG - receive_response_body.complete
+2025-04-08 09:35:18,314 - DEBUG - response_closed.started
+2025-04-08 09:35:18,325 - DEBUG - response_closed.complete
+2025-04-08 09:35:18,331 - DEBUG - close.started
+2025-04-08 09:35:18,339 - DEBUG - close.complete
+=======
   File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
                ^^^^^^^^^^^^^^^^^^^^^
@@ -5478,6 +6334,7 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 363: '
 2025-04-08 09:09:09,263 - DEBUG - response_closed.complete
 2025-04-08 09:09:09,264 - DEBUG - close.started
 2025-04-08 09:09:09,264 - DEBUG - close.complete
+<<<<<<< HEAD
 2025-04-08 10:02:57,030 - WARNING - Not Found: /favicon.ico
 2025-04-08 10:05:52,739 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\urls.py changed, reloading.
 2025-04-08 10:05:59,864 - INFO - C:\Users\ajink\OneDrive\Desktop\Hackathon\HackToSphereFinalRepo\HTF-I01\home\urls.py changed, reloading.
@@ -5509,3 +6366,6 @@ AttributeError: 'tuple' object has no attribute 'get'
 2025-04-08 11:11:58,745 - WARNING - Not Found: /team
 2025-04-08 11:12:03,452 - WARNING - Not Found: /partners
 2025-04-08 11:17:21,093 - WARNING - Not Found: /mission
+=======
+>>>>>>> 4cfc38efd872835a7a2a836a23c313d3d321e2c1
+>>>>>>> 40defde118e070695b8906a491826ef6bed5afcd

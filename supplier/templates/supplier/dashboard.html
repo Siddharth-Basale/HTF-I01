@@ -336,25 +336,25 @@
         </div>
 
         <!-- AI Suggestions Modal -->
-<div id="ai-suggestions-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-        <div class="flex justify-between items-center mb-4">
-            <h3 class="text-xl font-bold text-blue-700">
-                <i class="fas fa-lightbulb mr-2"></i> AI Market Suggestions
-            </h3>
-            <button id="close-ai-modal" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div id="ai-suggestions-content" class="space-y-4">
-            <div class="text-center py-4">
-                <i class="fas fa-spinner fa-spin text-blue-500 text-2xl"></i>
-                <p class="mt-2">Analyzing market trends...</p>
+        <div id="ai-suggestions-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-blue-700">
+                        <i class="fas fa-lightbulb mr-2"></i> AI Market Suggestions
+                    </h3>
+                    <button id="close-ai-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div id="ai-suggestions-content" class="space-y-4">
+                    <div class="text-center py-4">
+                        <i class="fas fa-spinner fa-spin text-blue-500 text-2xl"></i>
+                        <p class="mt-2">Analyzing market trends...</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     </main>
 
     <!-- Footer from register.html -->
@@ -437,35 +437,56 @@ aiSuggestionsBtn.addEventListener('click', async (e) => {
             }
         });
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
         const data = await response.json();
         
-        if (data.error) {
-            throw new Error(data.error);
+        if (!response.ok || data.status === 'error') {
+            throw new Error(data.error || data.message || 'Failed to get suggestions');
         }
         
         // Build suggestions HTML
         let html = `
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div class="w-full max-w-4xl bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h3 class="font-bold text-lg mb-3 text-blue-700">Market Analysis Results</h3>
                 <p class="text-blue-800 mb-4">${data.message}</p>
-                <h4 class="font-bold text-lg mb-3 text-blue-700">Top High-Demand Product Categories:</h4>
         `;
         
-        data.top_categories.forEach((category, index) => {
-            html += `
-                <div class="mb-4">
-                    <p class="font-semibold">${index + 1}. ${category.name}</p>
-                    <p class="text-sm text-gray-600 mb-2">Requested ${category.request_count} times recently</p>
-                    <p class="text-sm font-medium mb-1">Top Products:</p>
-                    <ul class="list-disc list-inside ml-4">
-                        ${category.top_products.map(p => `<li>${p}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-        });
+        if (data.top_categories && data.top_categories.length > 0) {
+            html += `<h4 class="font-bold text-lg mb-3 text-blue-700">Top High-Demand Product Categories:</h4>`;
+            
+            data.top_categories.forEach((category, index) => {
+                html += `
+                    <div class="mb-4">
+                        <p class="font-semibold">${index + 1}. ${category.name}</p>
+                        <p class="text-sm text-gray-600 mb-2">Requested ${category.request_count} times recently</p>
+                        <p class="text-sm font-medium mb-1">Top Products:</p>
+                        <ul class="list-disc list-inside ml-4">
+                            ${category.top_products.map(p => `<li>${p}</li>`).join('')}
+                        </ul>
+                        
+                    </div>
+                `;
+            });
+
+            
+        } else {
+            html += `<p class="text-gray-600">No category data available</p>`;
+        }
+
+        // if (data.supplier_recommendations && data.supplier_recommendations.length > 0) {
+        // html += `
+        //     <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        //         <h3 class="font-bold text-lg text-blue-800 mb-3">Supplier Recommendations</h3>
+        //         <ol class="list-decimal list-inside space-y-3">
+        //             ${data.supplier_recommendations.map(rec => `
+        //                 <li class="font-medium">
+        //                     <span class="text-blue-700">${rec.product}</span>
+        //                     <p class="text-sm text-gray-700 ml-5 mt-1">${rec.reason}</p>
+        //                 </li>
+        //             `).join('')}
+        //         </ol>
+        //     </div>
+        // `;
+// }
         
         html += `</div>`;
         aiContent.innerHTML = html;
@@ -475,6 +496,7 @@ aiSuggestionsBtn.addEventListener('click', async (e) => {
         aiContent.innerHTML = `
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
                 <strong>Error:</strong> ${error.message}
+                <p class="mt-2">Please try again later or contact support.</p>
             </div>
         `;
     }
