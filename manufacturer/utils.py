@@ -66,6 +66,7 @@ class CommodityAnalytics:
             agent = Agent(
                 model=Gemini(id="gemini-1.5-flash", temperature=0.2),
                 debug_mode=True,
+                markdown=True,
                 tools=[YFinanceTools(
                     historical_prices=True,
                     analyst_recommendations=True,

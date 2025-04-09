@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+
 # supplier/urls.py
 from .views import inventory_management, delete_inventory_item  # Make sure these are imported
 
