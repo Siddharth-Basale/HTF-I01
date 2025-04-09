@@ -402,12 +402,12 @@
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileNav = document.getElementById('mobile-nav');
-
+    
         if (mobileMenuToggle && mobileNav) {
             mobileMenuToggle.addEventListener('click', () => {
                 mobileNav.classList.toggle('active');
             });
-
+    
             // Close mobile menu when clicking outside
             document.addEventListener('click', (event) => {
                 const isClickInsideMenu = mobileNav.contains(event.target);
@@ -418,7 +418,7 @@
                 }
             });
         }
-
+    
         document.addEventListener('DOMContentLoaded', function() {
             // Price button functionality
             document.querySelectorAll('.toggle-price-btn').forEach(btn => {
@@ -456,8 +456,8 @@
                     }
                 });
             });
-
-            // Analytics button functionality
+    
+            // Analytics button functionality - SIMPLIFIED VERSION
             document.querySelectorAll('.toggle-analytics-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -480,19 +480,34 @@
                                 dataContentElement.style.display = 'block';
                                 
                                 if (data.analytics) {
-                                    // Parse and format the analytics data
-                                    const formattedContent = formatAnalyticsData(data.analytics, commodity);
-                                    dataContentElement.innerHTML = formattedContent;
+                                    // Display the raw analytics data exactly as it comes from the API
+                                    dataContentElement.innerHTML = `
+                                        <div class="p-4 whitespace-pre-wrap bg-gray-50 rounded">
+                                            ${data.analytics}
+                                        </div>
+                                    `;
                                 } else if (data.error) {
-                                    dataContentElement.innerHTML = `<div class="p-4 text-red-600"><i class="fas fa-exclamation-circle mr-2"></i> Error: ${data.error}</div>`;
+                                    dataContentElement.innerHTML = `
+                                        <div class="p-4 text-red-600">
+                                            <i class="fas fa-exclamation-circle mr-2"></i> Error: ${data.error}
+                                        </div>
+                                    `;
                                 } else {
-                                    dataContentElement.innerHTML = `<div class="p-4 text-gray-600"><i class="fas fa-info-circle mr-2"></i> Analytics not available for this commodity.</div>`;
+                                    dataContentElement.innerHTML = `
+                                        <div class="p-4 text-gray-600">
+                                            <i class="fas fa-info-circle mr-2"></i> Analytics not available for this commodity.
+                                        </div>
+                                    `;
                                 }
                             })
                             .catch(() => {
                                 loadingElement.style.display = 'none';
                                 dataContentElement.style.display = 'block';
-                                dataContentElement.innerHTML = `<div class="p-4 text-red-600"><i class="fas fa-exclamation-circle mr-2"></i> Failed to fetch analytics data. Please try again later.</div>`;
+                                dataContentElement.innerHTML = `
+                                    <div class="p-4 text-red-600">
+                                        <i class="fas fa-exclamation-circle mr-2"></i> Failed to fetch analytics data. Please try again later.
+                                    </div>
+                                `;
                             });
                     } else {
                         analyticsDiv.style.display = 'none';
@@ -500,161 +515,6 @@
                     }
                 });
             });
-            
-           // Updated formatAnalyticsData function
-    function formatAnalyticsData(analyticsText, commodity) {
-    //     const lines = analyticsText.split('\n');
-    //     let formattedHTML = '';
-
-    //     // Price Trend Analysis Section
-    //     if (analyticsText.includes('Price Trend Analysis')) {
-    //         formattedHTML += `
-    //             <div class="analytics-section">
-    //                 <div class="analytics-title">
-    //                     <i class="fas fa-chart-line mr-2"></i> Price Trend Analysis
-    //                 </div>
-    //                 <div class="analytics-data">`;
-            
-    //         let inSection = false;
-    //         let content = [];
-            
-    //         for (const line of lines) {
-    //             if (line.includes('Price Trend Analysis')) {
-    //                 inSection = true;
-    //                 continue;
-    //             }
-    //             if (inSection && line.trim() === '') break;
-    //             if (inSection) content.push(line.trim());
-    //         }
-            
-    //         if (content.length > 0) {
-    //             formattedHTML += `<p class="mb-2">${content.join(' ')}</p>`;
-    //             formattedHTML += `<div class="mt-2 text-sm text-gray-600">
-    //                 <i class="fas fa-info-circle mr-2"></i> More historical data recommended for robust analysis
-    //             </div>`;
-    //         }
-            
-    //         formattedHTML += `</div></div>`;
-    //     }
-
-    //     // Procurement Recommendations Section
-    //     if (analyticsText.includes('Procurement Recommendations')) {
-    //         formattedHTML += `
-    //             <div class="analytics-section">
-    //                 <div class="analytics-title">
-    //                     <i class="fas fa-clipboard-list mr-2"></i> Procurement Recommendations
-    //                 </div>
-    //                 <div class="analytics-data">`;
-            
-    //         let inSection = false;
-    //         let recommendations = [];
-            
-    //         for (const line of lines) {
-    //             if (line.includes('Procurement Recommendations')) {
-    //                 inSection = true;
-    //                 continue;
-    //             }
-    //             if (inSection && line.includes('Risk Assessment')) break;
-    //             if (inSection && line.trim().startsWith('*')) {
-    //                 recommendations.push(line.trim().substring(1).trim());
-    //             }
-    //         }
-            
-    //         if (recommendations.length > 0) {
-    //             formattedHTML += '<ul class="list-disc pl-5 space-y-2">';
-    //             for (const rec of recommendations) {
-    //                 formattedHTML += `<li class="analytics-highlight">${rec}</li>`;
-    //             }
-    //             formattedHTML += '</ul>';
-    //         }
-            
-    //         formattedHTML += `</div></div>`;
-    //     }
-
-    //     // Risk Assessment Section
-    //     if (analyticsText.includes('Risk Assessment')) {
-    //         formattedHTML += `
-    //             <div class="analytics-section">
-    //                 <div class="analytics-title">
-    //                     <i class="fas fa-exclamation-triangle mr-2"></i> Risk Assessment
-    //                 </div>
-    //                 <div class="analytics-data">`;
-            
-    //         let inSection = false;
-    //         let risks = [];
-            
-    //         for (const line of lines) {
-    //             if (line.includes('Risk Assessment')) {
-    //                 inSection = true;
-    //                 continue;
-    //             }
-    //             if (inSection && line.includes('Key News')) break;
-    //             if (inSection && line.trim().startsWith('*')) {
-    //                 risks.push(line.trim().substring(1).trim());
-    //             }
-    //         }
-            
-    //         if (risks.length > 0) {
-    //             formattedHTML += '<ul class="list-disc pl-5 space-y-2">';
-    //             for (const risk of risks) {
-    //                 formattedHTML += `<li class="text-red-600">${risk}</li>`;
-    //             }
-    //             formattedHTML += '</ul>';
-    //         }
-            
-    //         formattedHTML += `</div></div>`;
-    //     }
-
-    //     // Key News Section
-    //     formattedHTML += `
-    //         <div class="analytics-section">
-    //             <div class="analytics-title">
-    //                 <i class="fas fa-newspaper mr-2"></i> Key News Affecting Prices
-    //             </div>
-    //             <div class="analytics-data">
-    //                 <div class="text-yellow-600 bg-yellow-50 p-3 rounded-lg">
-    //                     <i class="fas fa-exclamation-circle mr-2"></i>
-    //                     News data incomplete. Please provide complete output from get_company_news API call
-    //                     for comprehensive analysis.
-    //                 </div>
-    //             </div>
-    //         </div>`;
-
-    //     // Conclusion Section
-    //     if (analyticsText.includes('Conclusion')) {
-    //         formattedHTML += `
-    //             <div class="analytics-section">
-    //                 <div class="analytics-title">
-    //                     <i class="fas fa-check-circle mr-2"></i> Conclusion
-    //                 </div>
-    //                 <div class="analytics-data">`;
-            
-    //         let inSection = false;
-    //         let content = [];
-            
-    //         for (const line of lines) {
-    //             if (line.includes('Conclusion')) {
-    //                 inSection = true;
-    //                 continue;
-    //             }
-    //             if (inSection) content.push(line.trim());
-    //         }
-            
-    //         if (content.length > 0) {
-    //             formattedHTML += `<p class="text-gray-700">${content.join(' ')}</p>`;
-    //             formattedHTML += `<div class="mt-3 p-3 bg-blue-50 rounded-lg">
-    //                 <p class="text-sm text-blue-800">
-    //                     <i class="fas fa-lightbulb mr-2"></i>
-    //                     Recommendation: Continuous market monitoring and enhanced data collection advised
-    //                 </p>
-    //             </div>`;
-    //         }
-            
-    //         formattedHTML += `</div></div>`;
-    //     }
-
-        return formattedHTML;
-    }
         });
     </script>
 </body>
